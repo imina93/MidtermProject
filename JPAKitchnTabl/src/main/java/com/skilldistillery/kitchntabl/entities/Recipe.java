@@ -27,8 +27,12 @@ public class Recipe {
 	@Column(name="serving_size")
 	private String servingSize;
 	
-	@Column(name="cook_time")
+	@Column(name="cook_time_in_minutes")
 	private int cookTime;
+	
+	@Column(name="prep_time_in_minutes")
+	private int prepTime;
+	
 	
 	@Column(name="user_id")
 	private int userId;

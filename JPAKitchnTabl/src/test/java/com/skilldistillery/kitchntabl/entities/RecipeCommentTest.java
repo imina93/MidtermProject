@@ -29,12 +29,14 @@ class RecipeCommentTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		em = emf.createEntityManager();
 		recipeComment = em.find(RecipeComment.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-	recipeComment = null;
+	em.close();
+		recipeComment = null;
 	}
 
 	@Test

@@ -4,16 +4,17 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name ="recipe_rating")
 public class RecipeRating {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@EmbeddedId
+	private RecipeRatingId id;
+	
 	private int rating;
 
 	@Column(name = "rating_date")
@@ -21,8 +22,22 @@ public class RecipeRating {
 
 	@Column(name = "rating_comment")
 	private String ratingComment;
-
+	
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "recipe_id")
+	private int recipeId;
+	
+	
 	public RecipeRating() {
+	}
+
+	public RecipeRatingId getId() {
+		return id;
+	}
+
+	public void setId(RecipeRatingId id) {
+		this.id = id;
 	}
 
 	public int getRating() {
@@ -50,21 +65,8 @@ public class RecipeRating {
 	}
 
 	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("RecipeRating [rating=");
-		builder.append(rating);
-		builder.append(", ratingDate=");
-		builder.append(ratingDate);
-		builder.append(", ratingComment=");
-		builder.append(ratingComment);
-		builder.append("]");
-		return builder.toString();
-	}
-
-	@Override
 	public int hashCode() {
-		return Objects.hash(rating);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -76,7 +78,23 @@ public class RecipeRating {
 		if (getClass() != obj.getClass())
 			return false;
 		RecipeRating other = (RecipeRating) obj;
-		return rating == other.rating;
+		return Objects.equals(id, other.id);
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("RecipeRating [id=");
+		builder.append(id);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append(", ratingDate=");
+		builder.append(ratingDate);
+		builder.append(", ratingComment=");
+		builder.append(ratingComment);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
 }

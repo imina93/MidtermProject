@@ -29,12 +29,14 @@ class RecipeImageTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		em = emf.createEntityManager();
 		recipeImage = em.find(RecipeImage.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 	recipeImage = null;
+	em.close();
 	}
 
 	@Test

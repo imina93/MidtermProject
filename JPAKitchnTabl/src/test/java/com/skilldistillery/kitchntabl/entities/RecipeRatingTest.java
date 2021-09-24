@@ -29,12 +29,17 @@ class RecipeRatingTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		recipeRating = em.find(RecipeRating.class, 1);
+		em = emf.createEntityManager();
+		RecipeRatingId rid = new RecipeRatingId();
+		rid.setRecipeId(1);
+		rid.setUserId(1);
+		recipeRating = em.find(RecipeRating.class, rid);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 	recipeRating = null;
+	em.close();
 	}
 
 	@Test

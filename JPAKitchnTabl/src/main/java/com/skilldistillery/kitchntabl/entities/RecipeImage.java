@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "recipe_image")
 public class RecipeImage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,13 @@ public class RecipeImage {
 
 	@Column(name = "image_url")
 	private String imageUrl;
+	
+	@Column(name = "user_id")
+	private int userId;
+	@Column(name = "recipe_id")
+	private int recipeId;
+	
+	
 
 	public RecipeImage() {
 	}

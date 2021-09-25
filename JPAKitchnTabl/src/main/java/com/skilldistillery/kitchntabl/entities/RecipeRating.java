@@ -6,6 +6,9 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +35,15 @@ public class RecipeRating {
 	@Column(name = "rating_comment")
 	private String ratingComment;
 	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	@MapsId(value = "userId")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name = "recipe_id")
+	@MapsId(value = "recipeId")
+	private Recipe recipe;
 	
 	// Don't map repeated composite key variable, ID class will handle that.
 //	@Column(name = "user_id")

@@ -6,6 +6,9 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,17 @@ public class CookbookRating {
 
 	@Column(name = "rating_comment")
 	private String ratingComment;
+	
+	@ManyToOne
+	@JoinColumn(name = "cookbook_id")
+	@MapsId(value = "cookbookId")
+	private Cookbook cookbook;
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	@MapsId(value = "userId")
+	private User user;
+	
 
 	public CookbookRating() {
 		super();

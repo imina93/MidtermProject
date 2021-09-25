@@ -1,5 +1,6 @@
 package com.skilldistillery.kitchntabl.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Recipe {
@@ -18,6 +20,8 @@ public class Recipe {
 	private String name;
 	private String instructions;
 	private int calories;
+	private String image;
+	private String description;
 	
 	@Column(name="chef_rating")
 	private int chefRating;
@@ -37,8 +41,14 @@ public class Recipe {
 	@Column(name="user_id")
 	private int userId;
 	
-	private String image;
-	private String description;
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeIngredient> recipeIngredient;
+	
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeRating> recipeRating;
+	
+	
+	
 	
 	
 	public Recipe() {

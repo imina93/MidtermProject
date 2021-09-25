@@ -4,6 +4,9 @@ import java.util.Objects;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,16 @@ public class RecipeIngredient {
 	
 	private String amount;
 	private String preparation;
+	
+	@ManyToOne
+	@JoinColumn(name = "recipe_id")
+	@MapsId(value = "recipeId")
+	private Recipe recipe;
+	
+	@ManyToOne
+	@JoinColumn(name = "ingredient_id")
+	@MapsId(value = "ingredientId")
+	private Ingredient ingredient;
 	
 	public RecipeIngredient() {
 		super();

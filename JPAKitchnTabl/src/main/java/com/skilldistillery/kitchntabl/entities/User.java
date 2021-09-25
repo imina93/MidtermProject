@@ -1,11 +1,13 @@
 package com.skilldistillery.kitchntabl.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -18,6 +20,15 @@ public class User {
 	private String password;
 	private boolean enabled;
 	private String role;
+	
+
+//	private List<User> user;
+	
+	@OneToMany(mappedBy = "user")
+	private List<CookbookRating> cookbookRating;
+	
+	@OneToMany(mappedBy = "user")
+	private List<RecipeRating> recipeRating;
 	
 	public User() {
 		super();

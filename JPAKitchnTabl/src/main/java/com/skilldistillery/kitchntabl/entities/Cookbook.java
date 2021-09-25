@@ -1,6 +1,7 @@
 package com.skilldistillery.kitchntabl.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cookbook {
@@ -15,6 +17,9 @@ public class Cookbook {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@OneToMany(mappedBy = "cookbook")
+	private List<CookbookRating> cookbookRating;
 
 	private String name;
 	

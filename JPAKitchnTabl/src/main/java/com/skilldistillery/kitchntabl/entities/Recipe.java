@@ -52,6 +52,46 @@ public class Recipe {
 	
 	
 	
+	public int getPrepTime() {
+		return prepTime;
+	}
+
+
+	public void setPrepTime(int prepTime) {
+		this.prepTime = prepTime;
+	}
+
+
+	public List<RecipeIngredient> getRecipeIngredient() {
+		return recipeIngredient;
+	}
+
+
+	public void setRecipeIngredient(List<RecipeIngredient> recipeIngredient) {
+		this.recipeIngredient = recipeIngredient;
+	}
+
+
+	public List<RecipeRating> getRecipeRating() {
+		return recipeRating;
+	}
+
+
+	public void setRecipeRating(List<RecipeRating> recipeRating) {
+		this.recipeRating = recipeRating;
+	}
+
+
+	public List<RecipeComment> getRecipeComment() {
+		return recipeComment;
+	}
+
+
+	public void setRecipeComment(List<RecipeComment> recipeComment) {
+		this.recipeComment = recipeComment;
+	}
+
+
 	public Recipe() {
 		super();
 	}

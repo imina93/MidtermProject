@@ -84,6 +84,12 @@ public class RecipeIngredientId implements Serializable {
 		builder.append(", ingredientId=");
 		builder.append(ingredientId);
 		builder.append("]");
+		
+		
+		
+		
+		
+		
 		return builder.toString();
 	}
 	

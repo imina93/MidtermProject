@@ -36,6 +36,9 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<RecipeComment> recipeComment;
 	
+	@OneToMany(mappedBy = "user")
+	private List<Cookbook> cookbook;
+	
 ///////Methods + Hash+ Equals + toString
 	
 	public User() {
@@ -90,6 +93,14 @@ public class User {
 
 	public void setRecipeImage(List<RecipeImage> recipeImage) {
 		this.recipeImage = recipeImage;
+	}
+
+	public List<Cookbook> getCookbook() {
+		return cookbook;
+	}
+
+	public void setCookbook(List<Cookbook> cookbook) {
+		this.cookbook = cookbook;
 	}
 
 	public String getUsername() {

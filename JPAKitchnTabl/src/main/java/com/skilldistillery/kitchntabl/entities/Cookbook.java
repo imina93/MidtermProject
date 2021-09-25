@@ -6,9 +6,12 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -23,9 +26,6 @@ public class Cookbook {
 
 	private String name;
 
-	@Column(name = "user_id")
-	private int userId;
-
 	private String description;
 
 	private String image;
@@ -35,6 +35,10 @@ public class Cookbook {
 
 	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	public int getId() {
 		return id;
@@ -52,13 +56,6 @@ public class Cookbook {
 		this.name = name;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
 	public String getDescription() {
 		return description;
@@ -100,10 +97,35 @@ public class Cookbook {
 		this.cookbookRating = cookbookRating;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String toString() {
-		return "Cookbook [id=" + id + ", name=" + name + ", userId=" + userId + ", description=" + description
-				+ ", image=" + image + ", createdDate=" + createdDate + ", lastUpdate=" + lastUpdate + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cookbook [id=");
+		builder.append(id);
+		builder.append(", cookbookRating=");
+		builder.append(cookbookRating);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", image=");
+		builder.append(image);
+		builder.append(", createdDate=");
+		builder.append(createdDate);
+		builder.append(", lastUpdate=");
+		builder.append(lastUpdate);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	@Override

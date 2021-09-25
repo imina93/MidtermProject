@@ -31,7 +31,10 @@ class CookbookRatingTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		cookbookRating = em.find(CookbookRating.class, 1);
+		CookbookRatingId rId = new CookbookRatingId();
+		rId.setCookbookId(1);
+		rId.setUserId(1);
+		cookbookRating = em.find(CookbookRating.class, rId);
 	}
 
 	@AfterEach
@@ -43,7 +46,6 @@ class CookbookRatingTest {
 	@Test
 	void test() {
 		assertNotNull(cookbookRating);
-		assertEquals(1, cookbookRating.getId());
 		assertEquals(3, cookbookRating.getRating());
 		assertEquals("its ok.", cookbookRating.getRatingComment());
 	}

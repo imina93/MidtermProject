@@ -4,39 +4,50 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "cookbook_rating")
 public class CookbookRating {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
-	private String rating;
-	
-	@Column(name="rating_date")
+	@EmbeddedId
+	private CookbookRatingId id;
+
+	private int rating;
+
+	@Column(name = "rating_date")
 	private LocalDateTime ratingDate;
-	
-	@Column(name="rating_comment")
+
+	@Column(name = "rating_comment")
 	private String ratingComment;
 
-	public int getId() {
+	public CookbookRating() {
+		super();
+	}
+
+	public CookbookRating(CookbookRatingId id, int rating, LocalDateTime ratingDate, String ratingComment) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.ratingDate = ratingDate;
+		this.ratingComment = ratingComment;
+	}
+
+	public CookbookRatingId getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(CookbookRatingId id) {
 		this.id = id;
 	}
 
-	public String getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
@@ -57,12 +68,6 @@ public class CookbookRating {
 	}
 
 	@Override
-	public String toString() {
-		return "CookbookRating [id=" + id + ", rating=" + rating + ", ratingDate=" + ratingDate + ", ratingComment="
-				+ ratingComment + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
@@ -76,9 +81,22 @@ public class CookbookRating {
 		if (getClass() != obj.getClass())
 			return false;
 		CookbookRating other = (CookbookRating) obj;
-		return id == other.id;
+		return Objects.equals(id, other.id);
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("CookbookRating [id=");
+		builder.append(id);
+		builder.append(", rating=");
+		builder.append(rating);
+		builder.append(", ratingDate=");
+		builder.append(ratingDate);
+		builder.append(", ratingComment=");
+		builder.append(ratingComment);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

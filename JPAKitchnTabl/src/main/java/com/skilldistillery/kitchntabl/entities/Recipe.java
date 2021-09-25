@@ -5,9 +5,12 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -38,8 +41,11 @@ public class Recipe {
 	private int prepTime;
 	
 	
-	@Column(name="user_id")
-	private int userId;
+//	@Column(name="user_id")
+//	private int userId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
 	
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeIngredient> recipeIngredient;
@@ -177,16 +183,6 @@ public class Recipe {
 	}
 
 
-	public int getUserId() {
-		return userId;
-	}
-
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-
 	public String getImage() {
 		return image;
 	}
@@ -204,6 +200,16 @@ public class Recipe {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 
@@ -228,10 +234,39 @@ public class Recipe {
 
 	@Override
 	public String toString() {
-		return "Recipe [id=" + id + ", name=" + name + ", instructions=" + instructions + ", calories=" + calories
-				+ ", chefRating=" + chefRating + ", category=" + category + ", servingSize=" + servingSize
-				+ ", cookTime=" + cookTime + ", userId=" + userId + ", image=" + image + ", description=" + description
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Recipe [id=");
+		builder.append(id);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", instructions=");
+		builder.append(instructions);
+		builder.append(", calories=");
+		builder.append(calories);
+		builder.append(", image=");
+		builder.append(image);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", chefRating=");
+		builder.append(chefRating);
+		builder.append(", category=");
+		builder.append(category);
+		builder.append(", servingSize=");
+		builder.append(servingSize);
+		builder.append(", cookTime=");
+		builder.append(cookTime);
+		builder.append(", prepTime=");
+		builder.append(prepTime);
+		builder.append(", user=");
+		builder.append(user);
+		builder.append(", recipeIngredient=");
+		builder.append(recipeIngredient);
+		builder.append(", recipeRating=");
+		builder.append(recipeRating);
+		builder.append(", recipeComment=");
+		builder.append(recipeComment);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

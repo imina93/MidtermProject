@@ -39,6 +39,9 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbook;
 	
+	@OneToMany(mappedBy = "user")
+	private List<Recipe> recipe;
+	
 ///////Methods + Hash+ Equals + toString
 	
 	public User() {
@@ -133,6 +136,14 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public List<Recipe> getRecipe() {
+		return recipe;
+	}
+
+	public void setRecipe(List<Recipe> recipe) {
+		this.recipe = recipe;
 	}
 
 	@Override

@@ -70,6 +70,9 @@ class UserTest {
 	
 	@Test
 	void test_mappingUserToRecipeOneToMany() {
+		assertNotNull(user);
+		assertEquals("admin", user.getUsername());
+		assertEquals("Peanut butter and jelly sandwich", user.getRecipe().get(0).getName());
 	}
 	
 	@Test

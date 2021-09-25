@@ -383,6 +383,7 @@ COMMIT;
 START TRANSACTION;
 USE `kitchntabldb`;
 INSERT INTO `cookbook_rating` (`cookbook_id`, `user_id`, `rating`, `rating_date`, `rating_comment`) VALUES (1, 1, 3, '2019-10-21 01:25:25', 'its ok.');
+INSERT INTO `cookbook_rating` (`cookbook_id`, `user_id`, `rating`, `rating_date`, `rating_comment`) VALUES (1, 2, 5, '2010-01-21 01:25:25', 'John is the best chef.');
 
 COMMIT;
 

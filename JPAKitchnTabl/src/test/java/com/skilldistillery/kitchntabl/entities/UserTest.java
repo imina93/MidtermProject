@@ -77,5 +77,8 @@ class UserTest {
 	
 	@Test
 	void test_mappingUserToCookbookRatingOneToMany() {
+		assertNotNull(user);
+		assertEquals("admin", user.getUsername());
+		assertEquals(3, user.getCookbookRating().get(0).getRating());
 	}
 }

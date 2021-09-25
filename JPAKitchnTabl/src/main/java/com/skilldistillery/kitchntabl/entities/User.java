@@ -41,6 +41,7 @@ public class User {
 	
 	@OneToMany(mappedBy = "user")
 	private List<Recipe> recipe;
+
 	
 ///////Methods + Hash+ Equals + toString
 	

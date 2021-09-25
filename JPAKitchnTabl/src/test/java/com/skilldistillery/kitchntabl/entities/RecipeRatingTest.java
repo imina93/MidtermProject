@@ -1,6 +1,7 @@
 package com.skilldistillery.kitchntabl.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -45,6 +46,8 @@ class RecipeRatingTest {
 	@Test
 	void test_recipeComment_entity_mapping() {
 		assertNotNull(recipeRating);
+		assertEquals("gross.", recipeRating.getRatingComment());
+		assertEquals(1, recipeRating.getId().getRecipeId());
 	}
 
 }

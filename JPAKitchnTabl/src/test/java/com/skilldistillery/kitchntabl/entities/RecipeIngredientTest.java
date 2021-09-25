@@ -1,5 +1,6 @@
 package com.skilldistillery.kitchntabl.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
@@ -33,21 +34,24 @@ class RecipeIngredientTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		RecipeIngredientId rii = new RecipeIngredientId();
-		rii.setIngredientId(1);
-		rii.setRecipeId(1);
-		recipeIngredient = em.find(RecipeIngredient.class, rii);
+		RecipeIngredientId rId = new RecipeIngredientId();
+		rId.setIngredientId(1);
+		rId.setRecipeId(1);
+		recipeIngredient = em.find(RecipeIngredient.class, rId);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
+		recipeIngredient = null;
 		
 	}
 	
 	@Test
 	void test() {
 		assertNotNull(recipeIngredient);
+		assertEquals("1 tablespoon", recipeIngredient.getAmount());
+		assertEquals(1, recipeIngredient.getId().getRecipeId());
 	}
 
 }

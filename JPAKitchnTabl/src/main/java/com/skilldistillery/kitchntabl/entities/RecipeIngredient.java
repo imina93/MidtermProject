@@ -39,6 +39,30 @@ public class RecipeIngredient {
 		this.preparation = preparation;
 	}
 
+	public RecipeIngredientId getId() {
+		return id;
+	}
+
+	public void setId(RecipeIngredientId id) {
+		this.id = id;
+	}
+
+	public Recipe getRecipe() {
+		return recipe;
+	}
+
+	public void setRecipe(Recipe recipe) {
+		this.recipe = recipe;
+	}
+
+	public Ingredient getIngredient() {
+		return ingredient;
+	}
+
+	public void setIngredient(Ingredient ingredient) {
+		this.ingredient = ingredient;
+	}
+
 	public String getAmount() {
 		return amount;
 	}
@@ -75,10 +99,16 @@ public class RecipeIngredient {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("RecipeIngredient [amount=");
+		builder.append("RecipeIngredient [id=");
+		builder.append(id);
+		builder.append(", amount=");
 		builder.append(amount);
 		builder.append(", preparation=");
 		builder.append(preparation);
+		builder.append(", recipe=");
+		builder.append(recipe);
+		builder.append(", ingredient=");
+		builder.append(ingredient);
 		builder.append("]");
 		return builder.toString();
 	}

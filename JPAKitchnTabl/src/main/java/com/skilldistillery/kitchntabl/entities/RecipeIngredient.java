@@ -15,20 +15,20 @@ public class RecipeIngredient {
 
 	@EmbeddedId
 	private RecipeIngredientId id;
-	
+
 	private String amount;
 	private String preparation;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "recipe_id")
 	@MapsId(value = "recipeId")
 	private Recipe recipe;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "ingredient_id")
 	@MapsId(value = "ingredientId")
 	private Ingredient ingredient;
-	
+
 	public RecipeIngredient() {
 		super();
 	}
@@ -112,7 +112,5 @@ public class RecipeIngredient {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
+
 }

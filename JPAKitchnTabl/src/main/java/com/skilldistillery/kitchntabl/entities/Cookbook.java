@@ -17,24 +17,23 @@ public class Cookbook {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@OneToMany(mappedBy = "cookbook")
 	private List<CookbookRating> cookbookRating;
 
 	private String name;
-	
-	
-	@Column(name="user_id")
+
+	@Column(name = "user_id")
 	private int userId;
-	
+
 	private String description;
-	
+
 	private String image;
-	
-	@Column(name="created_date")
+
+	@Column(name = "created_date")
 	private LocalDateTime createdDate;
-	
-	@Column(name="last_update")
+
+	@Column(name = "last_update")
 	private LocalDateTime lastUpdate;
 
 	public int getId() {
@@ -93,6 +92,14 @@ public class Cookbook {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public List<CookbookRating> getCookbookRating() {
+		return cookbookRating;
+	}
+
+	public void setCookbookRating(List<CookbookRating> cookbookRating) {
+		this.cookbookRating = cookbookRating;
+	}
+
 	@Override
 	public String toString() {
 		return "Cookbook [id=" + id + ", name=" + name + ", userId=" + userId + ", description=" + description
@@ -115,6 +122,5 @@ public class Cookbook {
 		Cookbook other = (Cookbook) obj;
 		return id == other.id;
 	}
-	
 
 }

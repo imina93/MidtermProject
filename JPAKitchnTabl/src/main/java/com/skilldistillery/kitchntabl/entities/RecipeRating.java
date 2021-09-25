@@ -12,6 +12,15 @@ import javax.persistence.Table;
 @Table(name ="recipe_rating")
 public class RecipeRating {
 
+
+	public RecipeRating(RecipeRatingId id, int rating, LocalDateTime ratingDate, String ratingComment) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.ratingDate = ratingDate;
+		this.ratingComment = ratingComment;
+	}
+
 	@EmbeddedId
 	private RecipeRatingId id;
 	
@@ -23,10 +32,15 @@ public class RecipeRating {
 	@Column(name = "rating_comment")
 	private String ratingComment;
 	
-	@Column(name = "user_id")
-	private int userId;
-	@Column(name = "recipe_id")
-	private int recipeId;
+	
+	// Don't map repeated composite key variable, ID class will handle that.
+//	@Column(name = "user_id")
+//	private int userId;
+//	@Column(name = "recipe_id")
+//	private int recipeId;
+	
+	
+
 	
 	
 	public RecipeRating() {

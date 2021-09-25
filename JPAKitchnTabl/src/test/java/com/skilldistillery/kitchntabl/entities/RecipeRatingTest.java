@@ -31,8 +31,8 @@ class RecipeRatingTest {
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
 		RecipeRatingId rid = new RecipeRatingId();
-		rid.setRecipeId(1);
 		rid.setUserId(1);
+		rid.setRecipeId(1);
 		recipeRating = em.find(RecipeRating.class, rid);
 	}
 

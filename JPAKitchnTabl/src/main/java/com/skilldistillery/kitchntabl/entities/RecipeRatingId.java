@@ -9,10 +9,20 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class RecipeRatingId implements Serializable {
 
+
+
+
 	private static final long serialVersionUID = 1L;
 
 	public RecipeRatingId() {
 	}
+	
+	public RecipeRatingId(int recipeId, int userId) {
+		super();
+		this.recipeId = recipeId;
+		this.userId = userId;
+	}
+	
 
 	@Column(name = "recipe_id")
 	private int recipeId;

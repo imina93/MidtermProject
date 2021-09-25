@@ -48,5 +48,9 @@ class CookbookRatingTest {
 		assertNotNull(cookbookRating);
 		assertEquals(3, cookbookRating.getRating());
 		assertEquals("its ok.", cookbookRating.getRatingComment());
+		assertEquals(1,cookbookRating.getId().getCookbookId());
+		assertEquals(1,cookbookRating.getId().getUserId());
 	}
+	
+	
 }

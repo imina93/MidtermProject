@@ -59,6 +59,15 @@ public class User {
 		this.id = id;
 	}
 
+	
+	public List<RecipeComment> getRecipeComment() {
+		return recipeComment;
+	}
+
+	public void setRecipeComment(List<RecipeComment> recipeComment) {
+		this.recipeComment = recipeComment;
+	}
+
 	public List<CookbookRating> getCookbookRating() {
 		return cookbookRating;
 	}

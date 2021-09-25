@@ -54,4 +54,19 @@ class UserTest {
 		assertEquals("gross.", user.getRecipeRating().get(0).getRatingComment());
 	}
 
+	@Test
+	void test_mappingUserToRecipeCommentOneToMany() {
+	}
+	
+	@Test
+	void test_mappingUserToCookbookOneToMany() {
+	}
+	
+	@Test
+	void test_mappingUserToRecipeOneToMany() {
+	}
+	
+	@Test
+	void test_mappingUserToCookbookRatingOneToMany() {
+	}
 }

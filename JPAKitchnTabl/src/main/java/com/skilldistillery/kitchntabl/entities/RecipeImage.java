@@ -27,19 +27,14 @@ public class RecipeImage {
 //	private int userId;
 //	@Column(name = "recipe_id")
 //	private int recipeId;
-	
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
 
-	
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
+
 	public RecipeImage() {
 		super();
 	}
-	
-	
 
 	public RecipeImage(int id, String imageUrl, User user) {
 		super();
@@ -47,8 +42,6 @@ public class RecipeImage {
 		this.imageUrl = imageUrl;
 		this.user = user;
 	}
-
-
 
 	public User getUser() {
 		return user;

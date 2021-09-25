@@ -8,7 +8,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class CookbookRatingId implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Column(name = "cookbook_id")
@@ -74,7 +74,5 @@ public class CookbookRatingId implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
+
 }

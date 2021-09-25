@@ -25,17 +25,16 @@ public class CookbookRating {
 
 	@Column(name = "rating_comment")
 	private String ratingComment;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "cookbook_id")
 	@MapsId(value = "cookbookId")
 	private Cookbook cookbook;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	@MapsId(value = "userId")
 	private User user;
-	
 
 	public CookbookRating() {
 		super();
@@ -79,6 +78,22 @@ public class CookbookRating {
 
 	public void setRatingComment(String ratingComment) {
 		this.ratingComment = ratingComment;
+	}
+
+	public Cookbook getCookbook() {
+		return cookbook;
+	}
+
+	public void setCookbook(Cookbook cookbook) {
+		this.cookbook = cookbook;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override

@@ -15,9 +15,9 @@ public class Ingredient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
+
 	@OneToMany(mappedBy = "ingredient")
 	private List<RecipeIngredient> recipeIngredient;
 
@@ -41,6 +41,14 @@ public class Ingredient {
 		this.name = name;
 	}
 
+	public List<RecipeIngredient> getRecipeIngredient() {
+		return recipeIngredient;
+	}
+
+	public void setRecipeIngredient(List<RecipeIngredient> recipeIngredient) {
+		this.recipeIngredient = recipeIngredient;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -62,7 +70,5 @@ public class Ingredient {
 	public String toString() {
 		return "ingredient [id=" + id + ", name=" + name + "]";
 	}
-	
-	
-	
+
 }

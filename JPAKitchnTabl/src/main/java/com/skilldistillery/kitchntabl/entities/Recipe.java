@@ -47,7 +47,8 @@ public class Recipe {
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeRating> recipeRating;
 	
-	
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeComment> recipeComment;
 	
 	
 	

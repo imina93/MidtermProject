@@ -33,7 +33,8 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<RecipeImage> recipeImage;
 	
-	
+	@OneToMany(mappedBy = "user")
+	private List<RecipeComment> recipeComment;
 	
 ///////Methods + Hash+ Equals + toString
 	

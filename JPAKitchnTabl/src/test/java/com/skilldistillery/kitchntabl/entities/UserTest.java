@@ -42,10 +42,16 @@ class UserTest {
 	}
 
 	@Test
-	void test() {
+	void test_mappingUserToRecipeImageOneToMany() {
 		assertNotNull(user);
 		assertEquals("admin", user.getUsername());
 		assertEquals("https://cdn-icons-png.flaticon.com/512/184/184514.png", user.getRecipeImage().get(0).getImageUrl());
+	}
+	@Test
+	void test_mappingUserToRecipeRatingOneToMany() {
+		assertNotNull(user);
+		assertEquals("admin", user.getUsername());
+		assertEquals("gross.", user.getRecipeRating().get(0).getRatingComment());
 	}
 
 }

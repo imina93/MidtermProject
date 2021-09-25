@@ -56,6 +56,9 @@ class UserTest {
 
 	@Test
 	void test_mappingUserToRecipeCommentOneToMany() {
+		assertNotNull(user);
+		assertEquals("admin", user.getUsername());
+		assertEquals("gross.", user.getRecipeComment().get(0).getCommentText());
 	}
 	
 	@Test

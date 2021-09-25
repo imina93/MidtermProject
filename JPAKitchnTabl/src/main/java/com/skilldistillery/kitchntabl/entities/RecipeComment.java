@@ -25,12 +25,7 @@ public class RecipeComment {
 
 	@Column(name = "comment_date")
 	private LocalDateTime commentDate;
-	
-	@Column(name = "recipe_id")
-	private int recipeId;
-	@Column(name = "user_id")
-	private int userId;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
@@ -43,21 +38,14 @@ public class RecipeComment {
 		super();
 	}
 	
-	
-
-	public RecipeComment(int id, String commentText, LocalDateTime commentDate, int recipeId, int userId, User user,
-			Recipe recipe) {
+	public RecipeComment(int id, String commentText, LocalDateTime commentDate, User user, Recipe recipe) {
 		super();
 		this.id = id;
 		this.commentText = commentText;
 		this.commentDate = commentDate;
-		this.recipeId = recipeId;
-		this.userId = userId;
 		this.user = user;
 		this.recipe = recipe;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -83,21 +71,6 @@ public class RecipeComment {
 		this.commentDate = commentDate;
 	}
 
-	public int getRecipeId() {
-		return recipeId;
-	}
-
-	public void setRecipeId(int recipeId) {
-		this.recipeId = recipeId;
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
 
 	public User getUser() {
 		return user;
@@ -129,10 +102,6 @@ public class RecipeComment {
 		builder.append(commentText);
 		builder.append(", commentDate=");
 		builder.append(commentDate);
-		builder.append(", recipeId=");
-		builder.append(recipeId);
-		builder.append(", userId=");
-		builder.append(userId);
 		builder.append(", user=");
 		builder.append(user);
 		builder.append(", recipe=");
@@ -143,7 +112,7 @@ public class RecipeComment {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(commentDate, commentText, id, recipe, recipeId, user, userId);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -155,9 +124,7 @@ public class RecipeComment {
 		if (getClass() != obj.getClass())
 			return false;
 		RecipeComment other = (RecipeComment) obj;
-		return Objects.equals(commentDate, other.commentDate) && Objects.equals(commentText, other.commentText)
-				&& id == other.id && Objects.equals(recipe, other.recipe) && recipeId == other.recipeId
-				&& Objects.equals(user, other.user) && userId == other.userId;
+		return id == other.id;
 	}
 
 }

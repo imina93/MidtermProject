@@ -30,6 +30,13 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<RecipeRating> recipeRating;
 	
+	@OneToMany(mappedBy = "user")
+	private List<RecipeImage> recipeImage;
+	
+	
+	
+///////Methods + Hash+ Equals + toString
+	
 	public User() {
 		super();
 	}
@@ -49,6 +56,30 @@ public class User {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public List<CookbookRating> getCookbookRating() {
+		return cookbookRating;
+	}
+
+	public void setCookbookRating(List<CookbookRating> cookbookRating) {
+		this.cookbookRating = cookbookRating;
+	}
+
+	public List<RecipeRating> getRecipeRating() {
+		return recipeRating;
+	}
+
+	public void setRecipeRating(List<RecipeRating> recipeRating) {
+		this.recipeRating = recipeRating;
+	}
+
+	public List<RecipeImage> getRecipeImage() {
+		return recipeImage;
+	}
+
+	public void setRecipeImage(List<RecipeImage> recipeImage) {
+		this.recipeImage = recipeImage;
 	}
 
 	public String getUsername() {

@@ -22,7 +22,7 @@ public class RecipeImage {
 	@Column(name = "image_url")
 	private String imageUrl;
 
-//  Only do in IDs///
+//  Only do in IDs for composite keys///
 //	@Column(name = "user_id")
 //	private int userId;
 //	@Column(name = "recipe_id")

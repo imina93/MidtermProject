@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "cookbook_rating")
 public class CookbookRating {
@@ -21,6 +23,7 @@ public class CookbookRating {
 	private int rating;
 
 	@Column(name = "rating_date")
+	@CreationTimestamp
 	private LocalDateTime ratingDate;
 
 	@Column(name = "rating_comment")

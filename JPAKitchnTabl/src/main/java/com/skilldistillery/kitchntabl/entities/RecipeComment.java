@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name="recipe_comment")
 public class RecipeComment {
@@ -24,6 +26,7 @@ public class RecipeComment {
 	private String commentText;
 
 	@Column(name = "comment_date")
+	@CreationTimestamp
 	private LocalDateTime commentDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)

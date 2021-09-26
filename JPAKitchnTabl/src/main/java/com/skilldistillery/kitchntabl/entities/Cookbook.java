@@ -14,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 public class Cookbook {
 
@@ -31,9 +34,11 @@ public class Cookbook {
 	private String image;
 
 	@Column(name = "created_date")
+	@CreationTimestamp
 	private LocalDateTime createdDate;
 
 	@Column(name = "last_update")
+	@UpdateTimestamp
 	private LocalDateTime lastUpdate;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

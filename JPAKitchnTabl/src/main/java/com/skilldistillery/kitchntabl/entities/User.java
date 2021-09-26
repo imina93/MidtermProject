@@ -3,6 +3,7 @@ package com.skilldistillery.kitchntabl.entities;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,17 @@ public class User {
 	private String password;
 	private boolean enabled;
 	private String role;
+	private String email;
+	
+	@Column(name="image_url")
+	private String imageURL;
+	
+	private String biography;
+	
+	@Column(name="first_name")
+	private String firstName;
+	@Column(name="last_name")
+	private String lastName;
 	
 
 //	private List<User> user;

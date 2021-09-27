@@ -5,7 +5,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
 import com.skilldistillery.kitchntabl.entities.RecipeRating;
 
 public class RecipeRatingDAOtest {
@@ -13,11 +12,6 @@ public class RecipeRatingDAOtest {
 
 	@Autowired
 	private RecipeRatingDAOImpl dao;
-	
-	@Test
-	void test_findRecipeRatingByKeyword() {
-			
-	};
 	
 	@Test
 	void test_createRecipeRating() {
@@ -33,4 +27,8 @@ public class RecipeRatingDAOtest {
 	void test_deleteRecipeRating() {
 			
 	}
+	
+	void test_findByKeyWord() {
+		List<RecipeRating> recipeRating = dao.findRecipeRatingByKeyword("gross");
+}
 }

@@ -1,11 +1,12 @@
 package com.skilldistillery.kitchntabl.data;
 
+import java.util.List;
+
 import com.skilldistillery.kitchntabl.entities.RecipeRating;
-import com.skilldistillery.kitchntabl.entities.RecipeRatingId;
 
 public interface RecipeRatingDAO {
-	RecipeRating createRecipeRating(RecipeRating recipeRating);
-	RecipeRating updateRecipeRating(RecipeRating recipeRating);
-	// Don't know about this one...
-	RecipeRating deleteRecipeRating(RecipeRatingId recipeRatingId);
+	List<RecipeRating> findRecipeRatingByKeyword(String keyword);
+//	RecipeRating createRecipeRating(RecipeRating recipeRating);
+	RecipeRating updateRecipeRating(int id, RecipeRating recipeRating);
+	boolean deleteRecipeRating(int recipeRatingId);
 }

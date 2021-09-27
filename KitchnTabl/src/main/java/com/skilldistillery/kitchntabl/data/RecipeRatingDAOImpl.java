@@ -24,7 +24,7 @@ public class RecipeRatingDAOImpl implements RecipeRatingDAO{
 		String jpql = "SELECT c FROM RecipeRating c WHERE name LIKE :searchRatingComment";
 		//Need the Percent signs to do a wildcard search.
 		keyword = "%" + keyword +  "%";
-		List<RecipeRating> results = em.createQuery(jpql, RecipeRating.class).setParameter("searchRatingComment", keyword)
+		List<RecipeRating> results = em.createQuery(jpql, RecipeRating.class).setParameter("searchRa", keyword)
 				.getResultList();
 		return results;
 	}
@@ -41,7 +41,7 @@ public class RecipeRatingDAOImpl implements RecipeRatingDAO{
 //		em.persist(newRecipeRating);
 //		em.flush();
 //		return newRecipeRating;
-//	}
+////	}
 
 	@Override
 	public RecipeRating updateRecipeRating(int id, RecipeRating recipeRating) {

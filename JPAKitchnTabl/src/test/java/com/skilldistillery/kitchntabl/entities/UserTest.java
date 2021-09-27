@@ -81,4 +81,11 @@ class UserTest {
 		assertEquals("admin", user.getUsername());
 		assertEquals(3, user.getCookbookRating().get(0).getRating());
 	}
+	
+	@Test
+	void test_mappingUserToCookbookRatingToCookBookOneToManyManyToOne() {
+		assertNotNull(user);
+		assertEquals("admin", user.getUsername());
+		assertEquals("a collection of my grandmas best recipes.", user.getCookbookRating().get(0).getCookbook().getDescription());
+	}
 }

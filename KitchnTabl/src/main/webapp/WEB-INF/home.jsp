@@ -44,7 +44,7 @@ color:white;
 	</form>
 </div>
 <div>
-<form action="addRecipeImage.do" method="get">
+<form action="createRecipeImageForm.do" method="get">
 	<label>John Test Link <input type="text" name="keyword"  /></label><br/>
 	<input type="submit" value="Search Categories" /><br/>
 	</form>

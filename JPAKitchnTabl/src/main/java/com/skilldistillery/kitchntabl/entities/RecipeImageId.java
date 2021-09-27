@@ -8,18 +8,16 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class RecipeImageId implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
-	
-	@Column(name="recipe_id")
+	@Column(name = "recipe_id")
 	private int recipeId;
 
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	private int userId;
 
-	
-	//Constructors and Methods
+	// Constructors and Methods
 	public RecipeImageId(int recipeId, int userId) {
 		super();
 		this.recipeId = recipeId;
@@ -30,8 +28,7 @@ public class RecipeImageId implements Serializable {
 		super();
 	}
 
-	
-	//---getters and setters
+	// ---getters and setters
 	public int getRecipeId() {
 		return recipeId;
 	}
@@ -52,7 +49,7 @@ public class RecipeImageId implements Serializable {
 		return serialVersionUID;
 	}
 
-	//--Hashcode and equals
+	// --Hashcode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(recipeId, userId);
@@ -70,12 +67,10 @@ public class RecipeImageId implements Serializable {
 		return recipeId == other.recipeId && userId == other.userId;
 	}
 
-	//ToString------
+	// ToString------
 	@Override
 	public String toString() {
 		return "RecipeImageId [recipeId=" + recipeId + ", userId=" + userId + "]";
 	}
-	
-	
-	
+
 }

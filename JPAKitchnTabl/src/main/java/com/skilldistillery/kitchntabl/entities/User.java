@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
 @Entity
 public class User {
 
@@ -22,41 +21,39 @@ public class User {
 	private boolean enabled;
 	private String role;
 	private String email;
-	
-	@Column(name="image_url")
+
+	@Column(name = "image_url")
 	private String imageURL;
-	
+
 	private String biography;
-	
-	@Column(name="first_name")
+
+	@Column(name = "first_name")
 	private String firstName;
-	@Column(name="last_name")
+	@Column(name = "last_name")
 	private String lastName;
-	
 
 //	private List<User> user;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<CookbookRating> cookbookRating;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<RecipeRating> recipeRating;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<RecipeImage> recipeImage;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<RecipeComment> recipeComment;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbook;
-	
+
 	@OneToMany(mappedBy = "user")
 	private List<Recipe> recipe;
 
-	
 ///////Methods + Hash+ Equals + toString
-	
+
 	public User() {
 		super();
 	}
@@ -117,7 +114,7 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -149,7 +146,7 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
 	public List<RecipeComment> getRecipeComment() {
 		return recipeComment;
 	}
@@ -185,7 +182,7 @@ public class User {
 	public List<Cookbook> getCookbook() {
 		return cookbook;
 	}
-	
+
 	public List<Recipe> getRecipe() {
 		return recipe;
 	}
@@ -231,9 +228,5 @@ public class User {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
-	
+
 }

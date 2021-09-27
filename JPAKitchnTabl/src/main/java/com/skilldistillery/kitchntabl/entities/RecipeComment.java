@@ -14,12 +14,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table(name="recipe_comment")
+@Table(name = "recipe_comment")
 public class RecipeComment {
-	
+
 	@EmbeddedId
 	private RecipeCommentId id;
-	
+
 	@Column(name = "comment_text")
 	private String commentText;
 
@@ -27,17 +27,17 @@ public class RecipeComment {
 	@CreationTimestamp
 	private LocalDateTime commentDate;
 
-	@ManyToOne  //(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-	@MapsId(value = "userId") 
-    private User user;
+	@ManyToOne // (fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	@MapsId(value = "userId")
+	private User user;
 
-	@ManyToOne  //(fetch = FetchType.LAZY)
-    @JoinColumn(name = "recipe_id")
-	@MapsId(value = "recipeId") 
-    private Recipe recipe;
-	
-	//Constructors
+	@ManyToOne // (fetch = FetchType.LAZY)
+	@JoinColumn(name = "recipe_id")
+	@MapsId(value = "recipeId")
+	private Recipe recipe;
+
+	// Constructors
 	public RecipeComment() {
 		super();
 	}
@@ -51,7 +51,7 @@ public class RecipeComment {
 		this.recipe = recipe;
 	}
 
-	//getters and settesr
+	// getters and settesr
 	public RecipeCommentId getId() {
 		return id;
 	}
@@ -91,8 +91,8 @@ public class RecipeComment {
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
 	}
-	
-	//hashcode and equals
+
+	// hashcode and equals
 
 	@Override
 	public int hashCode() {
@@ -113,14 +113,11 @@ public class RecipeComment {
 				&& Objects.equals(user, other.user);
 	}
 
-	//tostring
+	// tostring
 	@Override
 	public String toString() {
 		return "RecipeComment [id=" + id + ", commentText=" + commentText + ", commentDate=" + commentDate + ", user="
 				+ user + ", recipe=" + recipe + "]";
 	}
 
-	
-	
-	
 }

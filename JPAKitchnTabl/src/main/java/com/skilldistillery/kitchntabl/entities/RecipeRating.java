@@ -14,14 +14,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table(name ="recipe_rating")
+@Table(name = "recipe_rating")
 public class RecipeRating {
-
-
 
 	@EmbeddedId
 	private RecipeRatingId id;
-	
+
 	private int rating;
 
 	@Column(name = "rating_date")
@@ -30,23 +28,23 @@ public class RecipeRating {
 
 	@Column(name = "rating_comment")
 	private String ratingComment;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	@MapsId(value = "userId")
 	private User user;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "recipe_id")
 	@MapsId(value = "recipeId")
 	private Recipe recipe;
-	
+
 	// Don't map repeated composite key variable, ID class will handle that.
 //	@Column(name = "user_id")
 //	private int userId;
 //	@Column(name = "recipe_id")
 //	private int recipeId;
-	
+
 	// no arg constructors and all constructor
 	public RecipeRating(RecipeRatingId id, int rating, LocalDateTime ratingDate, String ratingComment) {
 		super();
@@ -56,12 +54,10 @@ public class RecipeRating {
 		this.ratingComment = ratingComment;
 	}
 
-	
-	
 	public RecipeRating() {
 	}
-	
-	//getters and setters
+
+	// getters and setters
 
 	public RecipeRatingId getId() {
 		return id;
@@ -95,7 +91,23 @@ public class RecipeRating {
 		this.ratingComment = ratingComment;
 	}
 
-	//hascode and equals
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Recipe getRecipe() {
+		return recipe;
+	}
+
+	public void setRecipe(Recipe recipe) {
+		this.recipe = recipe;
+	}
+
+	// hascode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -113,7 +125,7 @@ public class RecipeRating {
 		return Objects.equals(id, other.id);
 	}
 
-	//toString
+	// toString
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -129,5 +141,4 @@ public class RecipeRating {
 		return builder.toString();
 	}
 
-	
 }

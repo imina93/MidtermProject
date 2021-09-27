@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "recipe_image")
 public class RecipeImage {
-	
+
 	@EmbeddedId
 	private RecipeImageId id;
 
@@ -26,16 +26,16 @@ public class RecipeImage {
 //	@Column(name = "recipe_id")
 //	private int recipeId;
 
-	@ManyToOne//(fetch = FetchType.LAZY)
+	@ManyToOne // (fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	@MapsId(value = "userId")
 	private User user;
 
-	@ManyToOne//(fetch = FetchType.LAZY)
+	@ManyToOne // (fetch = FetchType.LAZY)
 	@JoinColumn(name = "recipe_id")
 	@MapsId(value = "recipeId")
 	private Recipe recipe;
-	
+
 	public RecipeImage() {
 		super();
 	}
@@ -101,7 +101,5 @@ public class RecipeImage {
 	public String toString() {
 		return "RecipeImage [id=" + id + ", imageUrl=" + imageUrl + ", user=" + user + "]";
 	}
-
-	
 
 }

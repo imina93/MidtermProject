@@ -7,30 +7,29 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class RecipeCommentId implements Serializable{
-	
-private static final long serialVersionUID = 1L;
-	
+public class RecipeCommentId implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Column(name = "recipe_id")
 	private int recipeId;
-	
+
 	@Column(name = "user_id")
 	private int userId;
-	
-	
-	//Constructors
-	
-public RecipeCommentId() {
+
+	// Constructors
+
+	public RecipeCommentId() {
 		super();
 	}
 
-public RecipeCommentId(int recipeId, int userId) {
+	public RecipeCommentId(int recipeId, int userId) {
 		super();
 		this.recipeId = recipeId;
 		this.userId = userId;
 	}
 
-	//Getters and Setters
+	// Getters and Setters
 	public int getRecipeId() {
 		return recipeId;
 	}
@@ -50,8 +49,8 @@ public RecipeCommentId(int recipeId, int userId) {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	//Hashcode and Equals
+
+	// Hashcode and Equals
 
 	@Override
 	public int hashCode() {
@@ -74,8 +73,5 @@ public RecipeCommentId(int recipeId, int userId) {
 	public String toString() {
 		return "RecipeCommentId [recipeId=" + recipeId + ", userId=" + userId + "]";
 	}
-	
-	
-
 
 }

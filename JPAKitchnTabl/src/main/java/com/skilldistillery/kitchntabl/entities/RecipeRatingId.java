@@ -11,25 +11,22 @@ public class RecipeRatingId implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-
 	@Column(name = "recipe_id")
 	private int recipeId;
 
 	@Column(name = "user_id")
 	private int userId;
-	
-	
-	//NO arg and all constructors
+
+	// NO arg and all constructors
 	public RecipeRatingId() {
 	}
-	
+
 	public RecipeRatingId(int recipeId, int userId) {
 		super();
 		this.recipeId = recipeId;
 		this.userId = userId;
 	}
-	
-	
+
 //Getters and setters
 	public int getRecipeId() {
 		return recipeId;
@@ -51,7 +48,7 @@ public class RecipeRatingId implements Serializable {
 		return serialVersionUID;
 	}
 
-	//Hashcode and equals
+	// Hashcode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(recipeId, userId);
@@ -68,6 +65,7 @@ public class RecipeRatingId implements Serializable {
 		RecipeRatingId other = (RecipeRatingId) obj;
 		return recipeId == other.recipeId && userId == other.userId;
 	}
+
 //ToString
 	@Override
 	public String toString() {

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TEST</title>
+<title>Search Results</title>
 <style> 
 body {
 color:white;
@@ -28,7 +28,7 @@ color:white;
 	<c:forEach var="category" items="${categories}">
 			<tr>
 			<td>${category.id}</td>
-			 <td>${category.name}}</td>
+			 <td>${category.name}</td>
             <td>${category.description}</td>
 			</tr>
 			

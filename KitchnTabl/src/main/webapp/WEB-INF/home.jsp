@@ -29,7 +29,7 @@ color:white;
 
 <h2>Please enter phrase to search by:</h2>
 <div>
-<form action="testpage.do" method="get">
+<form action="searchpage.do" method="get">
 	<label>Search Phrase: <input type="text" name="keyword"  /></label><br/>
 	<input type="submit" value="Search Categories" /><br/>
 	</form>

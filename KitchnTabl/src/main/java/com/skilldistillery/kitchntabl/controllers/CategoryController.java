@@ -17,12 +17,12 @@ public class CategoryController {
 	private CategoryDAO dao;
 	
 	
-	@RequestMapping(path =  "testpage.do" )
+	@RequestMapping(path =  "searchpage.do" )
 	public String searchCategory(String keyword, Model model) {
 		List<Category> categories = dao.findCategoryByKeyword(keyword);
 		model.addAttribute("categories", categories);
 		System.out.println(categories);
-		return "testpage";
+		return "searchpage";
 	}
 	
 	

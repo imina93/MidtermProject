@@ -54,7 +54,7 @@ class RecipeTest {
 	assertNotNull(recipe);
 //	assertEquals("1", recipe.getId());
 //	assertEquals("Guiness", Recipe.getName());
-	
+
 	}
 
 }

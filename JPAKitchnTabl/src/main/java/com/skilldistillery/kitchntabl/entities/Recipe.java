@@ -56,8 +56,18 @@ public class Recipe {
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeComment> recipeComment;
 	
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeImage> recipeImage;
 	
 	
+	
+//No arg constructor	
+	public Recipe() {
+		super();
+	}
+	
+	
+	// Get and Setters
 	public int getPrepTime() {
 		return prepTime;
 	}
@@ -97,10 +107,6 @@ public class Recipe {
 		this.recipeComment = recipeComment;
 	}
 
-
-	public Recipe() {
-		super();
-	}
 
 
 	public int getId() {
@@ -213,6 +219,7 @@ public class Recipe {
 	}
 
 
+	// Hashcod and Equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -231,7 +238,7 @@ public class Recipe {
 		return id == other.id;
 	}
 
-
+// ToString -------
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

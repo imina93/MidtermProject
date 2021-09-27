@@ -30,7 +30,10 @@ class RecipeImageTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		recipeImage = em.find(RecipeImage.class, 1);
+		RecipeImageId rii = new RecipeImageId();
+		rii.setRecipeId(1);
+		rii.setUserId(1);
+		recipeImage = em.find(RecipeImage.class, rii);
 	}
 
 	@AfterEach

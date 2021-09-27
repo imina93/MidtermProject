@@ -21,6 +21,7 @@ public class CategoryController {
 	public String searchCategory(String keyword, Model model) {
 		List<Category> categories = dao.findCategoryByKeyword(keyword);
 		model.addAttribute("categories", categories);
+		System.out.println(categories);
 		return "testpage";
 	}
 	

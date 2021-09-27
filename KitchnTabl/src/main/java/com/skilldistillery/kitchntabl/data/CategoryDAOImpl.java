@@ -21,10 +21,11 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Override
 	public List<Category> findCategoryByKeyword(String keyword) {
 
-		String jpql = "SELECT c FROM Category c WHERE name LIKE :searchName OR description Like :searchDescription";
-
-		List<Category> results = em.createQuery(jpql, Category.class).setParameter("searchName", "keyword")
-				.setParameter("searchDescription", "keyword").getResultList();
+		String jpql = "SELECT c FROM Category c WHERE name LIKE :searchName OR description LIKE :searchDescription";
+		//Need the Percent signs to do a wildcard search.
+		keyword = "%" + keyword +  "%";
+		List<Category> results = em.createQuery(jpql, Category.class).setParameter("searchName", keyword)
+				.setParameter("searchDescription", keyword).getResultList();
 		return results;
 	}
 

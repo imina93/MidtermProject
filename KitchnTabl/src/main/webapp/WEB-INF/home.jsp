@@ -9,8 +9,8 @@
 <meta charset="UTF-8">
 <title>Kitchn Tabl!</title>
 <style> 
-color:white;
 body {
+color:white;
   background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
    
   background-repeat: no-repeat; 
@@ -30,7 +30,7 @@ body {
 <h2>Please enter phrase to search by:</h2>
 <div>
 <form action="testpage.do" method="get">
-	<label>Search Phrase: <input type="text" name="categories"  /></label><br/>
+	<label>Search Phrase: <input type="text" name="keyword"  /></label><br/>
 	<input type="submit" value="Search Categories" /><br/>
 	</form>
 </div>

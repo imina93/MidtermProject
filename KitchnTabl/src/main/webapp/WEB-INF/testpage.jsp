@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>TEST</title>
 <style> 
-
 body {
+color:white;
   background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
    
   background-repeat: no-repeat; 
@@ -19,6 +19,12 @@ body {
 <body>
 
 	<div>
+	<table id="table-div">
+		<tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+		</tr>
 	<c:forEach var="category" items="${categories}">
 			<tr>
 			<td>${category.id}</td>
@@ -27,10 +33,10 @@ body {
 			</tr>
 			
 		</c:forEach>
+	</table>
 	</div>
 	<hr />
 	<a href="home.do">Back to Home</a>
-
 
 </body>
 </html>

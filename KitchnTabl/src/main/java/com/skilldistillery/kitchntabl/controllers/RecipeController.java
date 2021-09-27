@@ -54,6 +54,12 @@ public class RecipeController {
 	}
 	
 	@RequestMapping(path = "testpageag.do")
+	public boolean deleteRecipe(int recipeId, Model model) {
+		boolean result = dao.deleteRecipe(recipeId);
+		
+		return false;
+		
+	}
 	
 	
 }

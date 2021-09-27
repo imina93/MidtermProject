@@ -1,5 +1,6 @@
 package com.skilldistillery.kitchntabl.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import javax.persistence.EntityManager;
@@ -45,6 +46,7 @@ class RecipeImageTest {
 	@Test
 	void test_recipeComment_entity_mapping() {
 		assertNotNull(recipeImage);
+		assertEquals("https://cdn-icons-png.flaticon.com/512/184/184514.png", recipeImage.getImageUrl());
 	}
 
 }

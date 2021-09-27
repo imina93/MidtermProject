@@ -8,12 +8,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Kitchn Tabl!</title>
+<style> 
+body {
+  background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
+   
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+</style>
 </head>
 <body>
 
 
 	<h1>Welcome To Kitchn Tabl</h1>
-
+<h3>Home</h3>
+<a target="_blank" href="home.do">
+  <img src="https://cdn-icons-png.flaticon.com/512/184/184514.png" alt="Paris" style="width:60px">
+</a>
 	${DEBUG }
 </body>
 </html>

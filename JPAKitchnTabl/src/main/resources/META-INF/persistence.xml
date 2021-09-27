@@ -14,6 +14,7 @@
  		<class>com.skilldistillery.kitchntabl.entities.RecipeRating</class> 
  		<class>com.skilldistillery.kitchntabl.entities.CookbookRating</class>
  		<class>com.skilldistillery.kitchntabl.entities.CookbookRatingId</class>
+	 	<class>com.skilldistillery.kitchntabl.entities.RecipeCommentId</class>
 	 	<class>com.skilldistillery.kitchntabl.entities.RecipeRatingId</class>
 	 	<class>com.skilldistillery.kitchntabl.entities.RecipeIngredientId</class>
 	 	<class>com.skilldistillery.kitchntabl.entities.RecipeIngredient</class>

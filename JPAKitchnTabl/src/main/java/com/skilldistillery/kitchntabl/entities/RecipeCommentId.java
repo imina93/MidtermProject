@@ -7,30 +7,30 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class RecipeRatingId implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-
-
+public class RecipeCommentId implements Serializable{
+	
+private static final long serialVersionUID = 1L;
+	
 	@Column(name = "recipe_id")
 	private int recipeId;
-
+	
 	@Column(name = "user_id")
 	private int userId;
 	
 	
-	//NO arg and all constructors
-	public RecipeRatingId() {
-	}
+	//Constructors
 	
-	public RecipeRatingId(int recipeId, int userId) {
+public RecipeCommentId() {
+		super();
+	}
+
+public RecipeCommentId(int recipeId, int userId) {
 		super();
 		this.recipeId = recipeId;
 		this.userId = userId;
 	}
-	
-	
-//Getters and setters
+
+	//Getters and Setters
 	public int getRecipeId() {
 		return recipeId;
 	}
@@ -50,8 +50,9 @@ public class RecipeRatingId implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	//Hashcode and Equals
 
-	//Hashcode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(recipeId, userId);
@@ -65,18 +66,16 @@ public class RecipeRatingId implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		RecipeRatingId other = (RecipeRatingId) obj;
+		RecipeCommentId other = (RecipeCommentId) obj;
 		return recipeId == other.recipeId && userId == other.userId;
 	}
-//ToString
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("RecipeRatingId [recipeId=");
-		builder.append(recipeId);
-		builder.append(", userId=");
-		builder.append(userId);
-		builder.append("]");
-		return builder.toString();
+		return "RecipeCommentId [recipeId=" + recipeId + ", userId=" + userId + "]";
 	}
+	
+	
+
+
 }

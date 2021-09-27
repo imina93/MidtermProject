@@ -30,7 +30,10 @@ class RecipeCommentTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		recipeComment = em.find(RecipeComment.class, 1);
+		RecipeCommentId rci = new RecipeCommentId();
+		rci.setUserId(1);
+		rci.setRecipeId(1);
+		recipeComment = em.find(RecipeComment.class, rci);
 	}
 
 	@AfterEach

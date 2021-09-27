@@ -4,13 +4,12 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,10 +17,10 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity
 @Table(name="recipe_comment")
 public class RecipeComment {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-
+	
+	@EmbeddedId
+	private RecipeCommentId id;
+	
 	@Column(name = "comment_text")
 	private String commentText;
 
@@ -29,19 +28,22 @@ public class RecipeComment {
 	@CreationTimestamp
 	private LocalDateTime commentDate;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne  //(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+	@MapsId(value = "userId") 
     private User user;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne  //(fetch = FetchType.LAZY)
     @JoinColumn(name = "recipe_id")
+	@MapsId(value = "recipeId") 
     private Recipe recipe;
 	
+	//Constructors
 	public RecipeComment() {
 		super();
 	}
-	
-	public RecipeComment(int id, String commentText, LocalDateTime commentDate, User user, Recipe recipe) {
+
+	public RecipeComment(RecipeCommentId id, String commentText, LocalDateTime commentDate, User user, Recipe recipe) {
 		super();
 		this.id = id;
 		this.commentText = commentText;
@@ -50,11 +52,12 @@ public class RecipeComment {
 		this.recipe = recipe;
 	}
 
-	public int getId() {
+	//getters and settesr
+	public RecipeCommentId getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(RecipeCommentId id) {
 		this.id = id;
 	}
 
@@ -74,7 +77,6 @@ public class RecipeComment {
 		this.commentDate = commentDate;
 	}
 
-
 	public User getUser() {
 		return user;
 	}
@@ -83,39 +85,19 @@ public class RecipeComment {
 		this.user = user;
 	}
 
-
 	public Recipe getRecipe() {
 		return recipe;
 	}
 
-
-
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
 	}
-
-
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("RecipeComment [id=");
-		builder.append(id);
-		builder.append(", commentText=");
-		builder.append(commentText);
-		builder.append(", commentDate=");
-		builder.append(commentDate);
-		builder.append(", user=");
-		builder.append(user);
-		builder.append(", recipe=");
-		builder.append(recipe);
-		builder.append("]");
-		return builder.toString();
-	}
+	
+	//hashcode and equals
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(commentDate, commentText, id, recipe, user);
 	}
 
 	@Override
@@ -127,7 +109,19 @@ public class RecipeComment {
 		if (getClass() != obj.getClass())
 			return false;
 		RecipeComment other = (RecipeComment) obj;
-		return id == other.id;
+		return Objects.equals(commentDate, other.commentDate) && Objects.equals(commentText, other.commentText)
+				&& Objects.equals(id, other.id) && Objects.equals(recipe, other.recipe)
+				&& Objects.equals(user, other.user);
 	}
 
+	//tostring
+	@Override
+	public String toString() {
+		return "RecipeComment [id=" + id + ", commentText=" + commentText + ", commentDate=" + commentDate + ", user="
+				+ user + ", recipe=" + recipe + "]";
+	}
+
+	
+	
+	
 }

@@ -18,13 +18,6 @@ import org.hibernate.annotations.CreationTimestamp;
 public class RecipeRating {
 
 
-	public RecipeRating(RecipeRatingId id, int rating, LocalDateTime ratingDate, String ratingComment) {
-		super();
-		this.id = id;
-		this.rating = rating;
-		this.ratingDate = ratingDate;
-		this.ratingComment = ratingComment;
-	}
 
 	@EmbeddedId
 	private RecipeRatingId id;
@@ -54,12 +47,21 @@ public class RecipeRating {
 //	@Column(name = "recipe_id")
 //	private int recipeId;
 	
-	
+	// no arg constructors and all constructor
+	public RecipeRating(RecipeRatingId id, int rating, LocalDateTime ratingDate, String ratingComment) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.ratingDate = ratingDate;
+		this.ratingComment = ratingComment;
+	}
 
 	
 	
 	public RecipeRating() {
 	}
+	
+	//getters and setters
 
 	public RecipeRatingId getId() {
 		return id;
@@ -93,6 +95,7 @@ public class RecipeRating {
 		this.ratingComment = ratingComment;
 	}
 
+	//hascode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -110,6 +113,7 @@ public class RecipeRating {
 		return Objects.equals(id, other.id);
 	}
 
+	//toString
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

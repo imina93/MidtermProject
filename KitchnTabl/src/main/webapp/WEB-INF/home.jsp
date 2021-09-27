@@ -9,6 +9,9 @@
 <meta charset="UTF-8">
 <title>Kitchn Tabl!</title>
 <style> 
+
+
+h1 {text-align: center;}
 body {
 color:white;
   background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
@@ -34,6 +37,32 @@ color:white;
 	<input type="submit" value="Search Categories" /><br/>
 	</form>
 </div>
+<div>
+<form action="testpageag.do" method="get">
+	<label>Amanda Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+<div>
+<form action="addRecipeImage.do" method="get">
+	<label>John Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+<div>
+<form action="testpageim.do" method="get">
+	<label>Isaac Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Cookbooks" /><br/>
+	</form>
+</div>
+<div>
+<form action="testpagedr.do" method="get">
+	<label>Dave Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+
+
 
 
 

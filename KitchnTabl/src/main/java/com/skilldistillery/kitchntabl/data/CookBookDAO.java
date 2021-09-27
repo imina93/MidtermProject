@@ -1,11 +1,13 @@
 package com.skilldistillery.kitchntabl.data;
 
+import java.util.List;
+
 import com.skilldistillery.kitchntabl.entities.Cookbook;
 
 public interface CookBookDAO {	
-	Cookbook findCookbookByKeyword(String keyword);
+	List<Cookbook> findCookbookByKeyword(String keyword);
 	Cookbook createCookbook(Cookbook cookbook);
-	Cookbook updateCookbook(Cookbook cookbook);
-	Cookbook deleteCookbook(int cookbookId);
+	Cookbook updateCookbook(int id, Cookbook cookbook);
+	boolean deleteCookbook(int cookbookId);
 
 }

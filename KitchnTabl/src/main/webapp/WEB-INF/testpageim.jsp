@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Results</title>
+<title>TEST PAGE</title>
 <style>
 body {
 	color: white;
@@ -17,19 +17,18 @@ body {
 </style>
 </head>
 <body>
-
-	<div>
+<div>
 		<table id="table-div">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
 				<th>Description</th>
 			</tr>
-			<c:forEach var="category" items="${categories}">
+			<c:forEach var="cookbook" items="${cookbooks}">
 				<tr>
-					<td>${category.id}</td>
-					<td>${category.name}</td>
-					<td>${category.description}</td>
+					<td>${cookbook.id}</td>
+					<td>${cookbook.name}</td>
+					<td>${cookbook.description}</td>
 				</tr>
 
 			</c:forEach>

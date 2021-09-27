@@ -14,10 +14,11 @@
 h1 {text-align: center;}
 body {
 color:white;
-  background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
+  background-image: url("https://image.freepik.com/free-photo/fresh-baby-spinach-leaves-bowl-eggs-wooden-table-top-view-copy-space_127032-2246.jpg");
    
   background-repeat: no-repeat; 
   background-size: cover;
+   background-attachment: fixed;
 }
 </style>
 </head>

@@ -21,7 +21,7 @@ public class CookbookController {
 		List<Cookbook> cookbooks = dao.findCookbookByKeyword(keyword);
 		model.addAttribute("cookbooks", cookbooks);
 		System.out.println(cookbooks);
-		return "searchpage";
+		return "testpageim";
 	}
 	
 	

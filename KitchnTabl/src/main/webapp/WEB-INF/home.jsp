@@ -9,12 +9,16 @@
 <meta charset="UTF-8">
 <title>Kitchn Tabl!</title>
 <style> 
+
+
+h1 {text-align: center;}
 body {
 color:white;
-  background-image: url("https://st3.depositphotos.com/4590583/i/600/depositphotos_348227200-stock-photo-black-cooking-background-vegetables-spices.jpg");
+  background-image: url("https://image.freepik.com/free-photo/fresh-baby-spinach-leaves-bowl-eggs-wooden-table-top-view-copy-space_127032-2246.jpg");
    
   background-repeat: no-repeat; 
   background-size: cover;
+   background-attachment: fixed;
 }
 </style>
 </head>
@@ -29,11 +33,43 @@ color:white;
 
 <h2>Please enter phrase to search by:</h2>
 <div>
-<form action="searchpage.do" method="get">
+<form action="searchcategories.do" method="get">
 	<label>Search Phrase: <input type="text" name="keyword"  /></label><br/>
 	<input type="submit" value="Search Categories" /><br/>
 	</form>
 </div>
+<div>
+<form action="searchcookbooks.do" method="get">
+	<label>Search Phrase: <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Cookbooks" /><br/>
+	</form>
+</div>
+<div>
+<form action="testpageag.do" method="get">
+	<label>Amanda Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+<div>
+<form action="createRecipeImageForm.do" method="get">
+	<label>John Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+<div>
+<form action="testpageim.do" method="get">
+	<label>Isaac Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Cookbooks" /><br/>
+	</form>
+</div>
+<div>
+<form action="testpagedr.do" method="get">
+	<label>Dave Test Link <input type="text" name="keyword"  /></label><br/>
+	<input type="submit" value="Search Categories" /><br/>
+	</form>
+</div>
+
+
 
 
 

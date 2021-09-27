@@ -16,12 +16,12 @@ public class CookbookController {
 	@Autowired 
 	private CookBookDAOImpl dao;
 	
-	@RequestMapping(path =  "testpageim.do" )
+	@RequestMapping(path =  "searchcookbooks.do" )
 	public String searchCookBook(String keyword, Model model) {
 		List<Cookbook> cookbooks = dao.findCookbookByKeyword(keyword);
 		model.addAttribute("cookbooks", cookbooks);
 		System.out.println(cookbooks);
-		return "testpageim";
+		return "cookbooksearchresults";
 	}
 	
 	

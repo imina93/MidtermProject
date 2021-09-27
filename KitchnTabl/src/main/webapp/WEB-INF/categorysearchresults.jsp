@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Results</title>
+<title>Category Search Results</title>
 <style>
 body {
 	color: white;

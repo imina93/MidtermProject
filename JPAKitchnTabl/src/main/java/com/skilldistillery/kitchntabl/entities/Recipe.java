@@ -40,8 +40,7 @@ public class Recipe {
 	@Column(name = "prep_time_in_minutes")
 	private int prepTime;
 
-//	@Column(name="user_id")
-//	private int userId;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	private User user;
@@ -209,42 +208,12 @@ public class Recipe {
 		return id == other.id;
 	}
 
-// ToString -------
-	@Override
+@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Recipe [id=");
-		builder.append(id);
-		builder.append(", name=");
-		builder.append(name);
-		builder.append(", instructions=");
-		builder.append(instructions);
-		builder.append(", calories=");
-		builder.append(calories);
-		builder.append(", image=");
-		builder.append(image);
-		builder.append(", description=");
-		builder.append(description);
-		builder.append(", chefRating=");
-		builder.append(chefRating);
-		builder.append(", category=");
-		builder.append(category);
-		builder.append(", servingSize=");
-		builder.append(servingSize);
-		builder.append(", cookTime=");
-		builder.append(cookTime);
-		builder.append(", prepTime=");
-		builder.append(prepTime);
-		builder.append(", user=");
-		builder.append(user);
-		builder.append(", recipeIngredient=");
-		builder.append(recipeIngredient);
-		builder.append(", recipeRating=");
-		builder.append(recipeRating);
-		builder.append(", recipeComment=");
-		builder.append(recipeComment);
-		builder.append("]");
-		return builder.toString();
+		return "Recipe [id=" + id + ", name=" + name + ", instructions=" + instructions + ", calories=" + calories
+				+ ", image=" + image + ", description=" + description + ", chefRating=" + chefRating + ", category="
+				+ category + ", servingSize=" + servingSize + ", cookTime=" + cookTime + ", prepTime=" + prepTime
+				+ ", user=" + user + "]";
 	}
 
 }

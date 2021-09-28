@@ -48,7 +48,7 @@
 	</div>
 	<div> 
 		<form action="searchrecipebyid.do" method="get">
-			<label>Search Recipe By ID: <input type="text" name="keyword" /></label>
+			<label>Search Recipe By ID: <input type="text" name="rid" /></label>
 			<input type="submit" value="Search Recipes" />
 		</form>
 	</div>

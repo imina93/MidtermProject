@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,13 +26,14 @@ public class LoginController {
 	
 	
 	@RequestMapping(path = "login.do", method=RequestMethod.POST)
-	public String logIn(HttpSession session, User user) {
+	public String logIn(HttpSession session, User user, Model model) {
 		user = dao.logUserIn(user);
 		if(user != null) {
 			session.setAttribute("loggedInUser", user);
 			return "user/userPage";
 		}
 		else {
+			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
 			return "login";
 		}
 	}

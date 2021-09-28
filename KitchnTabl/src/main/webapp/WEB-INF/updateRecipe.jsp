@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Recipe</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<title>Insert title here</title>
 </head>
 <body>
 
-<form action="addRecipe.do" method="GET">
+
+<form action="editRecipe.do" method="GET">
 		Recipe ID: <input type="text" name="id" /> <br> <br>
 		Recipe Name: <input type="text" name="name" /> <br>
 		Recipe Instructions: <input type="text" name="instructions" /> <br>
@@ -25,12 +24,16 @@
 		
 			 <br> 
 			<input type="submit"
-			value="Join Now" />
+			value="Update Now"/>
+			
+			<form action="deleteRecipe.do" method="POST">
+		<input type="hidden" name="recipeId" value="${recipe.id}" /> <br> <input
+			type="submit" value="Delete Recipe" />
+	</form>
+
+			
+			
 	</form>
 	<a href="home.do"> <input type="submit" value="Return Home" /></a>
-
-
-
-
 </body>
 </html>

@@ -19,10 +19,9 @@ public class RecipeDaoImpl implements RecipeDAO {
 	
 	@Override
 	public Recipe findRecipe(int recipeId) {
-		
-		
-		return em.find(Recipe.class, recipeId);
+				return em.find(Recipe.class, recipeId);
 	}
+	
 
 	@Override
 	public List<Recipe> findRecipeByKeyword(String keyword) {
@@ -37,25 +36,13 @@ public class RecipeDaoImpl implements RecipeDAO {
 
 	@Override
 	public Recipe createRecipe(Recipe recipe) {
-		Recipe newRecipe = new Recipe();
-		
-		newRecipe.setId(0);
-		newRecipe.setName(" ");
-		newRecipe.setInstructions(" ");
-		newRecipe.setCalories(0);
-		newRecipe.setChefRating(0);
-		newRecipe.setCategory(" ");
-		newRecipe.setServingSize(" ");
-		newRecipe.setCookTime(0);
-		newRecipe.setPrepTime(0);
-		newRecipe.setImage(" ");
-		newRecipe.setDescription(" ");
-		
-		em.persist(newRecipe);
+		em.persist(recipe);
 		em.flush();
+		em.close();
+		return recipe;
 		
 	
-		return newRecipe;
+		
 	}
 
 	@Override

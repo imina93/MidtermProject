@@ -29,14 +29,27 @@
 	<h2>Please enter phrase to search by:</h2>
 	<div>
 		<form action="searchcategories.do" method="get">
-			<label>Search Phrase: <input type="text" name="keyword" /></label>
+			<label>Search Category: <input type="text" name="keyword" /></label>
 			<input type="submit" value="Search Categories" />
 		</form>
  	</div>
 	<div> 
 		<form action="searchcookbooks.do" method="get">
-			<label>Search Phrase: <input type="text" name="keyword" /></label>
+			<label>Search Cookbook: <input type="text" name="keyword" /></label>
 			<input type="submit" value="Search Cookbooks" />
+		</form>
+	</div>
+	
+	<div> 
+		<form action="searchrecipe.do" method="get">
+			<label>Search Recipe: <input type="text" name="keyword" /></label>
+			<input type="submit" value="Search Recipes" />
+		</form>
+	</div>
+	<div> 
+		<form action="searchrecipebyid.do" method="get">
+			<label>Search Recipe By ID: <input type="text" name="keyword" /></label>
+			<input type="submit" value="Search Recipes" />
 		</form>
 	</div>
 <!--	<div>

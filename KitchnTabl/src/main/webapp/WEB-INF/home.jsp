@@ -8,19 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Kitchn Tabl!</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
-h1 {
-	text-align: center;
-}
 
-body {
-	color: white;
-	background-image:
-		url("https://image.freepik.com/free-photo/fresh-baby-spinach-leaves-bowl-eggs-wooden-table-top-view-copy-space_127032-2246.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-}
 </style>
 </head>
 <body>
@@ -40,14 +30,14 @@ body {
 	<h2>Please enter phrase to search by:</h2>
 	<div>
 		<form action="searchcategories.do" method="get">
-			<label>Search Phrase: <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Categories" /><br />
+			<label>Search Phrase: <input type="text" name="keyword" /></label>
+			<input type="submit" value="Search Categories" />
 		</form>
  	</div>
-	<div>
+	<div> 
 		<form action="searchcookbooks.do" method="get">
-			<label>Search Phrase: <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Cookbooks" /><br />
+			<label>Search Phrase: <input type="text" name="keyword" /></label>
+			<input type="submit" value="Search Cookbooks" />
 		</form>
 	</div>
 <!--	<div>
@@ -77,7 +67,7 @@ body {
  -->
 	<div>
 		<form action="createUserSlot.do" method="POST">
-			<input type="submit" value="Join Now" /><br />
+			<input type="submit" value="Join Now" />
 		</form>
 	</div>
 	

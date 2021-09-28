@@ -1,4 +1,4 @@
-package com.skilldistillery.kitchntabl.data;
+package com.skilldistillery.kitchntabl.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.kitchntabl.data.UserDAO;
 import com.skilldistillery.kitchntabl.entities.User;
 
 @Controller

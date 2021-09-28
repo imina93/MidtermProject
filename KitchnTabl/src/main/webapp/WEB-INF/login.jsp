@@ -14,7 +14,12 @@
 	<%-- Error messages --%>
 	<input type="text" name="username">
 	<input type="password" name="password"/>
+  <c:if test ="${not empty loginError}">
+           ${loginError}
+        </c:if>
 	<input type="submit" value="Log In" > 
+	
+	
 </form>
 </body>
 </html>

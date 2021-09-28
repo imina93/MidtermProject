@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KT: Updated Profile</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 	<h1>Successfully Updated Your Information!</h1>

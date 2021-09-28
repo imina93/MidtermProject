@@ -22,8 +22,8 @@ public class RecipeController {
 	private RecipeDAO dao;
 	
 	@RequestMapping(path = "searchrecipebyid.do")
-	public String searchById(Integer recipeId, Model model) {
-		Recipe recipe = dao.findRecipe(recipeId);
+	public String searchById(Integer rid, Model model) {
+		Recipe recipe = dao.findRecipe(rid);
 		model.addAttribute("recipe",recipe);
 		
 		
@@ -49,8 +49,8 @@ public class RecipeController {
 	
 	
 	@RequestMapping(path = "editRecipe.do", method = RequestMethod.POST)
-	public String editRecipe(Recipe recipe, Integer id, Model model) {
-		Recipe dbRecipe = dao.updateRecipe(recipe, id);
+	public String editRecipe(Recipe recipe, Integer rid, Model model) {
+		Recipe dbRecipe = dao.updateRecipe(recipe, rid);
 		model.addAttribute("recipe", dbRecipe);
 		
 
@@ -59,8 +59,8 @@ public class RecipeController {
 	}
 	
 	@RequestMapping(path = "deleteRecipe.do")
-	public String deleteRecipe(Integer recipeId, HttpSession session) {
-		session.setAttribute("recipe", dao.deleteRecipe(recipeId));
+	public String deleteRecipe(Integer rid, HttpSession session) {
+		session.setAttribute("recipe", dao.deleteRecipe(rid));
 		
 		return "updateRecipe";
 		

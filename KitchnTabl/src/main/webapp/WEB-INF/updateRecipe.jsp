@@ -10,7 +10,7 @@
 
 
 <form action="editRecipe.do" method="GET">
-		Recipe ID: <input type="text" name="id" /> <br> <br>
+		Recipe ID: <input type="text" name="rid" /> <br> <br>
 		Recipe Name: <input type="text" name="name" /> <br>
 		Recipe Instructions: <input type="text" name="instructions" /> <br>
 		Calories: <input type="text" name="calories" /> <br>
@@ -25,14 +25,11 @@
 			 <br> 
 			<input type="submit"
 			value="Update Now"/>
+	</form>
 			
 			<form action="deleteRecipe.do" method="POST">
-		<input type="hidden" name="recipeId" value="${recipe.id}" /> <br> <input
+		<input type="hidden" name="rid" value="${recipe.id}" /> <br> <input
 			type="submit" value="Delete Recipe" />
-	</form>
-
-			
-			
 	</form>
 	<a href="home.do"> <input type="submit" value="Return Home" /></a>
 </body>

@@ -1,29 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>KT: Users Details</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
 <!--show.jsp is in a folder so for page= i used ../ to get it out and read bootstrapHead.jsp   -->
 
 </head>
 <body>
 	<div>
-		<h3>${user.username}'sStats:</h3>
+	
+		<h3>${user.username}'s Stats:</h3>
 		<br>
-
-		<!-- 	User Name: <input type="text" name="username" /> <br>
-		<br> Password: <input type="text" name="password" />
-		User Profile Picture: (Right Click, Open Image In New Tab, Copy
-		And Then Paste The address) <input type="text" name="imageUrl" />
-		<br> Email: <input type="text" name="email" /> <br>
-		First Name: <input type="text" name="firstName" /> <br>
-		Last Name: <input type="text" name="lastName" /> <br> 
-		Biography: <input type="text" name="biography" /> <br> <input
-			type="submit" value="Join Now" /> -->
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			Profile Picture</h3>
 		<img class="profile-picture" src="${user.imageUrl}"

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.kitchntabl.data.RecipeDAO;
 import com.skilldistillery.kitchntabl.entities.Recipe;
+import com.skilldistillery.kitchntabl.entities.User;
 
 @Controller
 public class RecipeController {
@@ -34,14 +35,18 @@ public class RecipeController {
 //		return "testpageag";
 //	}
 //	
-//	@RequestMapping(path = "testpageag.do", method = RequestMethod.POST)
-//	public String createRecipe(Recipe recipe, Model model) {
-//		Recipe addRecipe = dao.createRecipe(recipe);
-//		model.addAttribute("recipe" ,addRecipe);
-//		
-//		
-//		return "testpageag";
-//	}
+	@RequestMapping(path = "addRecipe.do", method = RequestMethod.POST)
+	public String createRecipe(Recipe recipe, Model model) {
+		Recipe addRecipe = dao.createRecipe(recipe);
+		model.addAttribute("recipe" ,addRecipe);
+		
+		
+		return "addRecipe";
+	}
+	
+
+	
+	
 //	
 //	@RequestMapping(path = "testpageag.do", method = RequestMethod.POST)
 //	public String editRecipe(Recipe recipe, int id, Model model) {

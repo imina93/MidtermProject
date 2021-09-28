@@ -10,7 +10,6 @@
 <title>Kitchn Tabl!</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
-
 </style>
 </head>
 <body>

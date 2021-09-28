@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Log In</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 <h2>Log In</h2>

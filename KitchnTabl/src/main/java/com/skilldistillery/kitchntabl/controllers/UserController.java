@@ -1,5 +1,7 @@
 package com.skilldistillery.kitchntabl.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +19,15 @@ public class UserController {
 	private UserDAO dao;
 	
 	@RequestMapping(path = "getUser.do")
-	public String showUser(@RequestParam Integer uid, Model model) {
+	public String showUser(@RequestParam Integer uid, HttpSession session) {
 		User user = dao.findById(uid);
-		model.addAttribute("user", user);
+		session.setAttribute("user", user);
 		return "user/userPage";
 	}
 	
 	@RequestMapping(path = "createUserSlot.do", method = RequestMethod.POST)
-	public String createUserForm(Model model, User user) {
+	public String createUserForm(HttpSession session, User user) {
+		session.setAttribute("user", dao.createUser(user));
 		return "user/addUser";
 	}
 
@@ -35,22 +38,22 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "updateUserSlot.do", method = RequestMethod.POST)
-	public String updateUserSlot(@RequestParam Integer uid, Model model) {
+	public String updateUserSlot(@RequestParam Integer uid, HttpSession session) {
 		User updatedUser = dao.findById(uid);
-		model.addAttribute("user", updatedUser);
+		session.setAttribute("user", updatedUser);
 		return "user/updateUser";
 	}
 
 	// update reseller
 	@RequestMapping(path = "updateUser.do", method = RequestMethod.POST)
-	public String updateUser(Integer uid, Model model, User user) {
-		model.addAttribute("user", dao.updateUser(uid, user));
+	public String updateUser(Integer uid, HttpSession session, User user) {
+		session.setAttribute("user", dao.updateUser(uid, user));
 		return "user/updateWorked";
 	}
 	
 	@RequestMapping(path = "deleteUser.do")
-	public String deleteUser(Integer uid, Model model) {
-		model.addAttribute("user", dao.destroyUser(uid));
+	public String deleteUser(Integer uid, HttpSession session) {
+		session.setAttribute("user", dao.destroyUser(uid));
 		return "user/deleted";
 	}
 }

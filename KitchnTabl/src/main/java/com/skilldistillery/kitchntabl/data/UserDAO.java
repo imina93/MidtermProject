@@ -13,4 +13,5 @@ public interface UserDAO {
 	User createUser(User user);
 	boolean destroyUser(int id);
 	//get username by username and password
+	User logUserIn(User user);
 }

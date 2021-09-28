@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KT: Users Details</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 <!--show.jsp is in a folder so for page= i used ../ to get it out and read bootstrapHead.jsp   -->
 
 </head>

@@ -1,5 +1,7 @@
 package com.skilldistillery.kitchntabl.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -29,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
 		dbUser.setEmail(user.getEmail());
 		dbUser.setUsername(user.getUsername());
 		dbUser.setPassword(user.getPassword());
-		dbUser.setImageURL(user.getImageURL());
+		dbUser.setImageUrl(user.getImageUrl());
 		dbUser.setFirstName(user.getFirstName());
 		dbUser.setLastName(user.getLastName());
 		dbUser.setBiography(user.getBiography());
@@ -63,4 +65,14 @@ public class UserDAOImpl implements UserDAO {
 		return user;
 	}
 
+	@Override
+	public User findById(int uid) {
+		return em.find(User.class, uid);
+	}
+	@Override
+	public List<User> findAll() {
+		String jpql = "SELECT u FROM User u";
+		List<User> user = em.createQuery(jpql, User.class).getResultList();
+		return user;
+	}
 }

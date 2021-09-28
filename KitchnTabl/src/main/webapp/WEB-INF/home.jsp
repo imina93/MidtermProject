@@ -32,7 +32,11 @@ body {
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		alt="Paris" style="width: 60px">
 	</a>
-
+		<div class="container-fluid">
+		<form action="getUser.do?id=${user.id}" method="GET">
+			User Id: <input type="text" name="uid" /> <input type="submit" value="Show User Info By Id" />
+		</form>
+		<br>
 	<h2>Please enter phrase to search by:</h2>
 	<div>
 		<form action="searchcategories.do" method="get">
@@ -76,6 +80,8 @@ body {
 			<input type="submit" value="Join Now" /><br />
 		</form>
 	</div>
+	
+ </div>
 	${DEBUG }
 </body>
 </html>

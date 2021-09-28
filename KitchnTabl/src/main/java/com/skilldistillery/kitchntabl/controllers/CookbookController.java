@@ -23,6 +23,4 @@ public class CookbookController {
 		System.out.println(cookbooks);
 		return "cookbooksearchresults";
 	}
-	
-	
 }

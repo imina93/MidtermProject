@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TEST PAGE</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
 body {
 	color: white;

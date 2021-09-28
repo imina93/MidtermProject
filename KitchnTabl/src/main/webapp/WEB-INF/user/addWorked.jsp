@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>KT: Welcome To KitchnTabl!</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 	<h2>You Are Now A Member!</h2>

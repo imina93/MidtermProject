@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Add User</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 

@@ -9,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "user")
 public class User {
 
 	@Id
@@ -23,7 +25,7 @@ public class User {
 	private String email;
 
 	@Column(name = "image_url")
-	private String imageURL;
+	private String imageUrl;
 
 	private String biography;
 
@@ -75,12 +77,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getImageURL() {
-		return imageURL;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setImageUrl(String imageURL) {
+		this.imageUrl = imageURL;
 	}
 
 	public String getBiography() {

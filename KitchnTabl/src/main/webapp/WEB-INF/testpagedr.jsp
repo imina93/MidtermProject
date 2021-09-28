@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TEST RECIPE RATING PAGE</title>
+<jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
 body {
 	color: white;

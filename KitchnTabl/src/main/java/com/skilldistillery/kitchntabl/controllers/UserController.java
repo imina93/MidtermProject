@@ -38,16 +38,24 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "updateUserSlot.do", method = RequestMethod.POST)
-	public String updateUserSlot(@RequestParam Integer uid, HttpSession session) {
-		User updatedUser = dao.findById(uid);
-		session.setAttribute("user", updatedUser);
-		return "user/updateUser";
+	public String updateUserSlot(Model model, HttpSession session) {
+		User user = (User) session.getAttribute("loggedInUser");
+		if(user != null) {
+			model.addAttribute("user", user);
+			return "user/updateUser";
+		}
+		else {
+			return "login";
+		}
 	}
 
 	// update reseller
 	@RequestMapping(path = "updateUser.do", method = RequestMethod.POST)
-	public String updateUser(Integer uid, HttpSession session, User user) {
-		session.setAttribute("user", dao.updateUser(uid, user));
+	public String updateUser(Integer uid, HttpSession session, User user, Model model) {
+		user = dao.updateUser(uid, user);
+		model.addAttribute("user", user);
+		session.setAttribute("loggedInUser", user);
+		
 		return "user/updateWorked";
 	}
 	

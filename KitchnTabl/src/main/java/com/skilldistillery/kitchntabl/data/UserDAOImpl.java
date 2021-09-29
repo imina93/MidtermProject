@@ -68,7 +68,9 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User findById(int uid) {
-		return em.find(User.class, uid);
+		User user = em.find(User.class, uid);
+		user.getRecipe().size();
+		return user;
 	}
 	@Override
 	public List<User> findAll() {

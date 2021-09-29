@@ -37,7 +37,7 @@
 	</form>
 	<br>
 	<form action="deleteUser.do" method="POST">
-		<input type="hidden" name="uid" value="${loggedInUser.id}" /> <br> <input
+		<input type="hidden" name="uid" value="${user.id}" /> <br> <input
 			type="submit" value="Delete Account" />
 	</form>
 	<!-- create go home button here -->

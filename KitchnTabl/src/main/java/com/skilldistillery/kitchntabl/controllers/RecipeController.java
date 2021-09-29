@@ -73,7 +73,7 @@ public class RecipeController {
 	boolean result = dao.deleteRecipe(rid);
 		
 		
-		return "updateRecipe";
+		return "editRecipeSuccessful";
 		
 	} 
 	

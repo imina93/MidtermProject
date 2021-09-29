@@ -21,6 +21,21 @@
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		alt="Paris" style="width: 60px">
 	</a>
+	<div>
+	
+	<c:if test ="${not empty loggedInUser}">
+		<form action="logout.do" method="POST">
+			<input type="submit" value="Logout" />
+		</form>
+        </c:if>
+	<c:if test ="${ empty loggedInUser}">
+		<form action="login.do" method="POST">
+			<input type="submit" value="Login" />
+		</form>
+        </c:if>
+	</div>
+	
+	
 		<div class="container-fluid">
 		<form action="getUser.do?id=${user.id}" method="GET">
 			User Id: <input type="text" name="uid" /> <input type="submit" value="Show User Info By Id" />

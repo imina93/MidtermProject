@@ -18,7 +18,7 @@
 		First Name: <input type="text" name="firstName" /> <br>
 		Last Name: <input type="text" name="lastName" /> <br> 
 		Biography: <input type="text" name="biography" /> <br> <input
-			type="submit" value="Join Now" /> --> -->
+			type="submit" value="Join Now" /> -->
 	<h2>Current Details:</h2>
 	<div>
 		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Profile Picture</h3>

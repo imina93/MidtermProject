@@ -12,6 +12,7 @@
 </head>
 <body>
 <div>
+			<c:if test ="${not empty cookbooks}">
 		<table id="table-div">
 			<tr>
 				<th>ID</th>
@@ -27,6 +28,10 @@
 
 			</c:forEach>
 		</table>
+		  </c:if>
+		  <c:if test ="${ empty cookbooks}">
+   	<h2>Search Results Empty</h2>
+        </c:if>
 	</div>
 	<hr />
 	<a href="home.do">Back to Home</a>

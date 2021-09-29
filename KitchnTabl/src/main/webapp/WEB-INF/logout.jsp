@@ -5,28 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TEST PAGE</title>
+<title>KT: Logout</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
 </style>
 </head>
+<h1>Logout Successful, Please Return To Homepage</h1>
 <body>
 <div>
-		<table id="table-div">
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Description</th>
-			</tr>
-			<c:forEach var="cookbook" items="${cookbooks}">
-				<tr>
-					<td>${cookbook.id}</td>
-					<td>${cookbook.name}</td>
-					<td>${cookbook.description}</td>
-				</tr>
-
-			</c:forEach>
-		</table>
+		
 	</div>
 	<hr />
 	<a href="home.do">Back to Home</a>

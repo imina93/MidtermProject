@@ -40,6 +40,6 @@ public class LoginController {
 	@RequestMapping(path = "logout.do")
 	public String logOut(HttpSession session) {
 		session.removeAttribute("loggedInUser");
-		return "login";
+		return "logout";
 	}
 }

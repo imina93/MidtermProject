@@ -29,6 +29,14 @@ public class RecipeController {
 		
 		return "recipebyidresult";
 	}
+	@RequestMapping(path = "showRecipe.do")
+	public String showUserRecipeById(Integer rid, Model model) {
+		Recipe recipe = dao.findRecipe(rid);
+		model.addAttribute("recipe",recipe);
+		
+		
+		return "showRecipe";
+	}
 	
 	@RequestMapping(path = "searchrecipe.do")
 	public String searchRecipe(String keyword, Model model) {
@@ -61,8 +69,9 @@ public class RecipeController {
 	}
 	
 	@RequestMapping(path = "deleteRecipe.do")
-	public String deleteRecipe(Integer rid, HttpSession session) {
-		session.setAttribute("recipe", dao.deleteRecipe(rid));
+	public String deleteRecipe(Integer rid, Model model) {
+	boolean result = dao.deleteRecipe(rid);
+		
 		
 		return "updateRecipe";
 		

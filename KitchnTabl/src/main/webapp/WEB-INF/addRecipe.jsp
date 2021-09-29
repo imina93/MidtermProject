@@ -9,8 +9,8 @@
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-
-<form action="addRecipe.do" method="GET">
+Recipe Added
+<!-- <form action="addRecipe.do" method="GET">
 		Recipe ID: <input type="text" name="id" /> <br> <br>
 		Recipe Name: <input type="text" name="name" /> <br>
 		Recipe Instructions: <input type="text" name="instructions" /> <br>
@@ -26,7 +26,7 @@
 			 <br> 
 			<input type="submit"
 			value="Join Now" />
-	</form>
+	</form> -->
 	<a href="home.do"> <input type="submit" value="Return Home" /></a>
 
 

@@ -39,7 +39,9 @@ public class RecipeController {
 	}
 
 	@RequestMapping(path = "addRecipe.do", method = RequestMethod.POST)
-	public String createRecipe(Recipe recipe, Model model) {
+	public String createRecipe(Recipe recipe, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("loggedInUser");
+		recipe.setUser(user);
 		Recipe addRecipe = dao.createRecipe(recipe);
 		model.addAttribute("recipe" ,addRecipe);
 		

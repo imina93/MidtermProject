@@ -56,7 +56,7 @@
 			</tr>
 			<c:forEach var="recipe" items="${loggedInUser.recipe}">
 				<tr>
-					<td>${recipe.name}</td>
+					<td><a href="showRecipe.do?rid=${recipe.id}">${recipe.name}</a></td>
 					<td>${recipe.description}</td>
 					<td>${recipe.prepTime}</td>
 					<td>${recipe.cookTime}</td>

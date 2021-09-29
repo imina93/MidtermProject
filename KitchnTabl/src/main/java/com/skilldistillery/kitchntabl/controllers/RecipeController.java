@@ -29,6 +29,14 @@ public class RecipeController {
 		
 		return "recipebyidresult";
 	}
+	@RequestMapping(path = "showRecipe.do")
+	public String showUserRecipeById(Integer rid, Model model) {
+		Recipe recipe = dao.findRecipe(rid);
+		model.addAttribute("recipe",recipe);
+		
+		
+		return "showRecipe";
+	}
 	
 	@RequestMapping(path = "searchrecipe.do")
 	public String searchRecipe(String keyword, Model model) {

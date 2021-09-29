@@ -9,6 +9,10 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.kitchntabl.entities.Recipe;
+import com.skilldistillery.kitchntabl.entities.RecipeComment;
+import com.skilldistillery.kitchntabl.entities.RecipeImage;
+import com.skilldistillery.kitchntabl.entities.RecipeIngredient;
+import com.skilldistillery.kitchntabl.entities.RecipeRating;
 
 @Service
 @Transactional
@@ -68,7 +72,20 @@ public class RecipeDaoImpl implements RecipeDAO {
 	@Override
 	public boolean deleteRecipe(int recipeId) {
 		Recipe deleteRecipe = em.find(Recipe.class, recipeId);
+		for ( RecipeComment recipeComment : deleteRecipe.getRecipeComment()) {
+			em.remove(recipeComment);
+		}
+		for ( RecipeIngredient recipeIngredient : deleteRecipe.getRecipeIngredient()) {
+			em.remove(recipeIngredient);
+		}
+		for ( RecipeRating recipeRating : deleteRecipe.getRecipeRating()) {
+			em.remove(recipeRating);
+		}
+		for ( RecipeImage recipeImage : deleteRecipe.getRecipeImage()) {
+			em.remove(recipeImage);
+		}
 		if(deleteRecipe != null	) {
+			
 			em.remove(deleteRecipe);
 		}
 	

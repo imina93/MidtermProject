@@ -13,18 +13,16 @@
 <body>
 	<div>
 	
-		<h3>${loggedInUser.username}'s Stats:</h3>
+		<h3>${loggedInUser.username}'s Info:</h3>
 		<br>
-		<h3>&nbsp;&nbsp;&nbsp;
+		<h3>&nbsp;
 			Profile Picture</h3>
 		<img class="profile-picture" src="${loggedInUser.imageUrl}"
 			style="float: left; margin-right: 15px;" width="200" height="200">
 
-		User Name: ${loggedInUser.username} <br>
-		Password: ${loggedInUser.password} <br>
-		Email: ${loggedInUser.email} <br>
 		First Name: ${loggedInUser.firstName} <br>
 		Last Name: ${loggedInUser.lastName} <br>
+		Email: ${loggedInUser.email} <br>
 		Biography: ${loggedInUser.biography} <br>
 	</div>
 	<br>

@@ -27,6 +27,24 @@
 		class="profile-small"
 		alt="Home">
 	</a>
+	<c:if test ="${not empty loggedInUser}">
+           	<div>
+		<form action="logout.do" method="POST">
+			<input type="submit" value="Logout" />
+		</form>
+	</div>
+        </c:if>
+	<c:if test ="${ empty loggedInUser}">
+           	<div>
+		<form action="login.do" method="POST">
+			<input type="submit" value="Login" />
+		</form>
+	</div>
+        </c:if>
+	
+	
+	
+	
 		<div class="container-fluid">
 		<form action="getUser.do?id=${user.id}" method="GET">
 			User Id: <input type="text" name="uid" /> <input type="submit" value="Show User Info By Id" />

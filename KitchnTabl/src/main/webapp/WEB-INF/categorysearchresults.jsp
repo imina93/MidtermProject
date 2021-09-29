@@ -8,11 +8,14 @@
 <title>Category Search Results</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
+
 </style>
+
 </head>
 <body>
 
-	<div>
+  <div>
+  <span class="codeblock">
 		<c:if test ="${not empty categories}">
 		<table id="table-div">
 			<tr>
@@ -31,6 +34,7 @@
 		</table>
 		
         </c:if>
+        </span> 
 	<c:if test ="${ empty categories}">
    	<h2>Search Results Empty</h2>
         </c:if>

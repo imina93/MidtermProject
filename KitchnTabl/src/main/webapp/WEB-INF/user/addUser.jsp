@@ -9,17 +9,54 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<a target="_blank" href="home.do"> <img
+		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
+		class="profile-small"
+		alt="Home">
+	</a>
 
-	<form action="createUser.do" method="POST">
-		User Name: <input type="text" name="username" /> <br> <br>
-		Password: <input type="text" name="password" /> <br> User
-		Profile Picture: (Right Click, Open Image In New Tab, Copy And Then
-		Paste The address) <input type="text" name="imageUrl" /> <br>
-		Email: <input type="text" name="email" /> <br> First Name: <input
-			type="text" name="firstName" /> <br> Last Name: <input
-			type="text" name="lastName" /> <br> Biography: <input
-			type="text" name="biography" /> <br> <input type="submit"
-			value="Join Now" />
+<form action="createUser.do" method="POST">
+		<table>
+
+			<tr>
+				<td>User Name:</td>
+				<td><input type="text" name="username" /></td>
+			</tr>
+
+			<tr>
+				<td>Password:</td>
+				<td><input type="text" name="password" /></td>
+			</tr>
+
+			<tr>
+				<td>Profile Picture:</td>
+				<td><input type="text" name="imageUrl" /></td>
+				<td>(Right Click, Open Image In New Tab, Copy And Then Paste
+					The address)</td>
+			</tr>
+
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" name="email" /></td>
+			</tr>
+
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="firstName" /></td>
+			</tr>
+			
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lastName" /></td>
+			</tr>
+
+			<tr>
+				<td>Biography:</td>
+				<td><input type="text" name="biography" /></td>
+			</tr>
+
+		</table>
+			 <input type="submit" value="Submit" />
 	</form>
 	<a href="home.do"> <input type="submit" value="Return Home" /></a>
 </body>

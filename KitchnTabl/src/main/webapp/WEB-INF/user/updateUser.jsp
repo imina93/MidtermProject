@@ -21,7 +21,7 @@
 			type="submit" value="Join Now" /> -->
 	<h2>Current Details:</h2>
 	<div>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Profile Picture</h3>
+		<h3>&nbsp;Profile Picture</h3>
 		<p>
 			<img class="profile-picture" src="${user.imageUrl}"
 				style="float: left; margin-right: 15px;" width="200" height="200"></img>

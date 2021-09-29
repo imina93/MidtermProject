@@ -60,7 +60,7 @@ public class UserController {
 	
 	@RequestMapping(path = "deleteUser.do")
 	public String deleteUser(Integer uid, HttpSession session) {
-		session.setAttribute("user", dao.destroyUser(uid));
+		session.removeAttribute("user");
 		return "user/deleted";
 	}
 }

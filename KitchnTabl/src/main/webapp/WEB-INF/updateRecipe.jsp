@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>KT: Update Recipe</title>
 </head>
 <body>
 
 
 <form action="editRecipe.do" method="GET">
-		Recipe ID: <input type="text" name="rid" /> <br> <br>
+		
 		Recipe Name: <input type="text" name="name" /> <br>
 		Recipe Instructions: <input type="text" name="instructions" /> <br>
 		Calories: <input type="text" name="calories" /> <br>

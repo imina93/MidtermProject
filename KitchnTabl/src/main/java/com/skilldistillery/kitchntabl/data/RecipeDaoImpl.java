@@ -49,7 +49,7 @@ public class RecipeDaoImpl implements RecipeDAO {
 	public Recipe updateRecipe(Recipe recipe, int id) {
 		Recipe updateRecipe = em.find(Recipe.class, id);
 		
-		updateRecipe.setId(recipe.getId());
+//		updateRecipe.setId(recipe.getId());
 		updateRecipe.setName(recipe.getName());
 		updateRecipe.setInstructions(recipe.getInstructions());
 		updateRecipe.setCalories(recipe.getCalories());

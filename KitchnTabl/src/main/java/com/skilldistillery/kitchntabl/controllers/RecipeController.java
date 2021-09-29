@@ -69,8 +69,9 @@ public class RecipeController {
 	}
 	
 	@RequestMapping(path = "deleteRecipe.do")
-	public String deleteRecipe(Integer rid, HttpSession session) {
-		session.setAttribute("recipe", dao.deleteRecipe(rid));
+	public String deleteRecipe(Integer rid, Model model) {
+	boolean result = dao.deleteRecipe(rid);
+		
 		
 		return "updateRecipe";
 		

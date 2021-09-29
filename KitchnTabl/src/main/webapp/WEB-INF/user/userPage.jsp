@@ -73,7 +73,7 @@
 	<br>
 	<br>
 	<form action="addRecipe.do" method="POST">
-		
+		<legend>Add Recipe:</legend>
 		Recipe Name: <input type="text" name="name" /> <br>
 		Recipe Instructions: <input type="text" name="instructions" /> <br>
 		Calories: <input type="text" name="calories" /> <br>
@@ -82,7 +82,7 @@
 		Serving Size: <input type="text" name="servingSize" /> <br>
 		Cook Time: <input type="text" name="cookTime" /> <br>
 		Prep Time: <input type="text" name="prepTime" /> <br>
-		Add An Image: <input type="text" name="imageUrl" /> <br>
+		Add An Image: <input type="text" name="image" /> <br>
 		Description: <input type="text" name="description" /> <br>
 		
 			 <br> 

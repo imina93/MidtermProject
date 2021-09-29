@@ -26,8 +26,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "createUserSlot.do", method = RequestMethod.POST)
-	public String createUserForm(HttpSession session, User user) {
-		session.setAttribute("user", dao.createUser(user));
+	public String createUserForm(Model model) {
 		return "user/addUser";
 	}
 

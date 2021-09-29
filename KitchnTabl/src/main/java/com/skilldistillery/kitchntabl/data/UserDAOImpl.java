@@ -20,6 +20,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User createUser(User user) {
 		em.persist(user);
+		user.setRole("user");
 		em.flush();
 		em.close();
 		return user;
@@ -42,9 +43,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean destroyUser(int id) {
+	public boolean destroyUser(int uid) {
 		boolean successfullyRemovedUser = false;
-		User user = em.find(User.class, id);
+		User user = em.find(User.class, uid);
 		if (user != null) {
 			em.remove(user); // performs the delete on the managed entity
 			successfullyRemovedUser = !em.contains(user);

@@ -77,6 +77,7 @@
 		</form>
 	</div>
  -->
+
 	<div>
 		<form action="createUserSlot.do" method="POST">
 			<input type="submit" value="Join Now" />
@@ -84,6 +85,5 @@
 	</div>
 	
  </div>
-	${DEBUG }
 </body>
 </html>

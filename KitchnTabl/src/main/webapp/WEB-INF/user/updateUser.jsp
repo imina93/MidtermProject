@@ -21,29 +21,29 @@
 			type="submit" value="Join Now" /> --> -->
 	<h2>Current Details:</h2>
 	<div>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Profile Picture</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Profile Picture</h3>
 		<p>
 			<img class="profile-picture" src="${user.imageUrl}"
 				style="float: left; margin-right: 15px;" width="200" height="200"></img>
 		</p>
 		
-		<p>User Name: ${user.username}</p>
-		<p>Password: ${user.password}</p>
-		<p>Email: ${user.email}</p>
+		<p>User Name:  ${user.username}</p>
+		<p>Password:   ${user.password}</p>
+		<p>Email:      ${user.email}</p>
 		<p>First Name: ${user.firstName}</p>
-		<p>Last Name: ${user.lastName}</p>
-		<p>Biography: ${user.biography}</p>
+		<p>Last Name:  ${user.lastName}</p>
+		<p>Biography:  ${user.biography}</p>
 
 		<form action="updateUser.do" method="POST">
 			<input type="hidden" name="uid" value="${user.id}" />
-			User Name: <input type="text" value="${user.username}" name="username" /> <br>
-			 Password: <input type="text" value="${user.password}" name="password" /> <br>
+			User Name: <input type="text" value="${loggedInUser.username}" name="username" /> <br>
+			 Password: <input type="text" value="${loggedInUser.password}" name="password" /> <br>
 			Profile Picture: (open an image in a new tab then pasted the link here): 
-			<input type="text" value="${user.imageUrl}" name="imageUrl" /> <br>
-			Email: <input type="text" value="${user.email}" name="email" /> <br> 
-			First Name: <input type="text" value="${user.firstName}" name="firstName" /> <br>
-			Last Name: <input type="text" value="${user.lastName}" name="lastName" /> <br>
-			Biography: <input type="text" value="${reseller.profitsMade}" name="profitsMade" /> <br>
+			<input type="text" value="${loggedInUser.imageUrl}" name="imageUrl" /> <br>
+			Email: <input type="text" value="${loggedInUser.email}" name="email" /> <br> 
+			First Name: <input type="text" value="${loggedInUser.firstName}" name="firstName" /> <br>
+			Last Name: <input type="text" value="${loggedInUser.lastName}" name="lastName" /> <br>
+			Biography: <input type="text" value="${loggedInUser.biography}" name="biography" /> <br>
 			<input type="submit" value="Update Profile" /> <a
 				href="home.do"> <input type="submit" value="Return Home" />
 			</a>

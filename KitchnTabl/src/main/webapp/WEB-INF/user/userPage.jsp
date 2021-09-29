@@ -7,41 +7,37 @@
 <head>
 <meta charset="UTF-8">
 <title>KT: Users Details</title>
-<<<<<<< HEAD
-=======
-<jsp:include page="../bootstrapHead.jsp"></jsp:include>
->>>>>>> 488d2d0c3873e38898a034b20168cc4d3d143de3
 <!--show.jsp is in a folder so for page= i used ../ to get it out and read bootstrapHead.jsp   -->
-
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 	<div>
 	
-		<h3>${user.username}'s Stats:</h3>
+		<h3>${loggedInUser.username}'s Stats:</h3>
 		<br>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<h3>&nbsp;&nbsp;&nbsp;
 			Profile Picture</h3>
-		<img class="profile-picture" src="${user.imageUrl}"
+		<img class="profile-picture" src="${loggedInUser.imageUrl}"
 			style="float: left; margin-right: 15px;" width="200" height="200">
 
-		User Name: ${user.username} <br>
-		Password: ${user.password} <br>
-		Email: ${user.email} <br>
-		First Name: ${user.firstName} <br>
-		Last Name: ${reseller.lastName} <br>
-		Biography: ${user.biography} <br>
+		User Name: ${loggedInUser.username} <br>
+		Password: ${loggedInUser.password} <br>
+		Email: ${loggedInUser.email} <br>
+		First Name: ${loggedInUser.firstName} <br>
+		Last Name: ${loggedInUser.lastName} <br>
+		Biography: ${loggedInUser.biography} <br>
 	</div>
 	<br>
 	<br>
 	<br>
 	<br>
 	<form action="updateUserSlot.do" method="POST">
-		<input type="hidden" name="uid" value="${user.id}" /> <input
+		<input type="hidden" name="uid" value="${loggedInUser.id}" /> <input
 			type="submit" value="Update Info" />
 	</form>
 	<br>
 	<form action="deleteUser.do" method="POST">
-		<input type="hidden" name="uid" value="${user.id}" /> <br> <input
+		<input type="hidden" name="uid" value="${loggedInUser.id}" /> <br> <input
 			type="submit" value="Delete Account" />
 	</form>
 	<!-- create go home button here -->

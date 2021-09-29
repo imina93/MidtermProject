@@ -16,27 +16,40 @@ public class LoginController {
 
 	@Autowired
 	private UserDAO dao;
-	
-	@RequestMapping(path = "login.do", method=RequestMethod.GET)
+
+	@RequestMapping(path = "login.do", method = RequestMethod.GET)
 	public String goToLoginForm() {
-		
 		return "login";
 	}
-	
-	
-	
+
 	@RequestMapping(path = "login.do", method=RequestMethod.POST)
 	public String logIn(HttpSession session, User user, Model model) {
 		user = dao.logUserIn(user);
 		if(user != null) {
 			session.setAttribute("loggedInUser", user);
-			return "user/userPage";
-		}
-		else {
+			return "home";
+		} else {
 			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
 			return "login";
 		}
 	}
+	@RequestMapping(path = "loginViewProfile.do", method = RequestMethod.GET)
+	public String goToProfilePage() {
+		return "loginViewProfile";
+	}
+	
+	@RequestMapping(path = "loginViewProfile.do", method = RequestMethod.POST)
+	public String logInPD(HttpSession session, User user, Model model) {
+		user = dao.logUserIn(user);
+		if (user != null) {
+			session.setAttribute("loggedInUser", user);
+			return "user/userPage";
+		} else {
+			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
+			return "login";
+		}
+	}
+
 	@RequestMapping(path = "logout.do")
 	public String logOut(HttpSession session) {
 		session.removeAttribute("loggedInUser");

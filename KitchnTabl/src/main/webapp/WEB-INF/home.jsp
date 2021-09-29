@@ -19,9 +19,28 @@
 </head>
 <body>
 
+<ul>
+  <li><a class="active" href="home.do">Home</a></li>
+  <c:if test ="${ empty loggedInUser}">
+    <li><a href="loginViewProfile.do">Profile</a></li>
+  </c:if>
+  <c:if test ="${ not empty loggedInUser}">
+    <li><a href="getUserPage.do">Profile</a></li>
+  </c:if>
+  <li><a href="searchcategories.do">Categories</a></li>
+  <li><a href="searchrecipe.do">Recipes</a></li>
+  <li><a href="searchcookbooks.do">Cookbooks</a></li>
+  <!-- if user is logged in href= logout if no user href=login -->
+  <c:if test ="${ empty loggedInUser}">
+    <li style="float:right"><a href="login.do">Login</a></li>
+  </c:if>
+  <c:if test ="${ not empty loggedInUser}">
+    <li style="float:right"><a href="logout.do">Logout</a></li>
+  </c:if>
+</ul>
+<div id="headerDiv">
 
 	<h1>Welcome To The Kitchn Tabl</h1>
-	<h3>Home</h3>
 	<a target="_blank" href="home.do"> <img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		class="profile-small"
@@ -46,42 +65,11 @@
 	
 	
 		<div class="container-fluid">
-		<form action="getUser.do?id=${user.id}" method="GET">
+		<form action="getUser.do?id=${user.id}" method="GET"> <!-- idea -->
 			User Id: <input type="text" name="uid" /> <input type="submit" value="Show User Info By Id" />
 		</form>
 		<br>
 	<h2>Please enter phrase to search by:</h2>
-<!-- 	<div>
-		<form action="searchcategories.do" method="get">
-			<label>Search Category: <input type="text" name="keyword" /></label>
-			<input type="submit" value="Search Categories" />
-		</form>
- 	</div> -->
- 	
- 	
- 	
-	<!-- <div> 
-		<form action="searchcookbooks.do" method="get">
-			<label>Search Cookbook: <input type="text" name="keyword" /></label>
-			<input type="submit" value="Search Cookbooks" />
-		</form>
-	</div> -->
-	
-<!-- 	<div> 
-		<form action="searchrecipe.do" method="get">
-			<label>Search Recipe: <input type="text" name="keyword" /></label>
-			<input type="submit" value="Search Recipes" />
-		</form>
-	</div>
-	 -->
-	 
-<!-- 	 <div> 
-		<form action="searchrecipebyid.do" method="get">
-			<label>Search Recipe By ID: <input type="text" name="rid" /></label>
-			<input type="submit" value="Search Recipes" />
-		</form>
-	</div> -->
-	
 	<form action="searchcategories.do" method="get" id="searchcategories"></form> 
 	<form action="searchcookbooks.do" method="get" id="searchcookbooks"></form>
 	<form action="searchrecipe.do" method="get" id="searchrecipe"></form>
@@ -112,37 +100,6 @@
 		    
     
 </table>
-	
-	
-	
-	
-	
-	
-<!--	<div>
-		<form action="testpageag.do" method="get">
-			<label>Amanda Test Link <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Categories" /><br />
-		</form>
-	</div>
-	<div>
-		<form action="createRecipeImageForm.do" method="get">
-			<label>John Test Link <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Categories" /><br />
-		</form>
-	</div>
-	<div>
-		<form action="testpageim.do" method="get">
-			<label>Isaac Test Link <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Cookbooks" /><br />
-		</form>
-	</div>
-	<div>
-		<form action="testpagedr.do" method="get">
-			<label>Dave Test Link <input type="text" name="keyword" /></label><br />
-			<input type="submit" value="Search Categories" /><br />
-		</form>
-	</div>
- -->
 
 	<div>
 		<form action="createUserSlot.do" method="POST">
@@ -151,5 +108,6 @@
 	</div>
 	
  </div>
+</div>
 </body>
 </html>

@@ -54,7 +54,7 @@ public class RecipeController {
 		model.addAttribute("recipe" ,addRecipe);
 		
 		
-		return "addRecipeSuccess";
+		return "recipeAdded";
 	}
 	
 	
@@ -64,16 +64,16 @@ public class RecipeController {
 		model.addAttribute("recipe", dbRecipe);
 		
 
-		return "editRecipeSuccessful";
+		return "recipeEdited";
 		
 	}
 	
 	@RequestMapping(path = "deleteRecipe.do")
 	public String deleteRecipe(Integer rid, Model model) {
-	boolean result = dao.deleteRecipe(rid);
+		boolean result = dao.deleteRecipe(rid);
 		
 		
-		return "editRecipeSuccessful";
+		return "recipeDeleted";
 		
 	} 
 	

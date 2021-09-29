@@ -4,14 +4,6 @@ h1 {
 	text-align: center;
 }
 
-body {
-	color: white;
-	background-image:
-		url("https://c1.wallpaperflare.com/preview/467/176/26/appetizer-dark-delicious-dining.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-}
 
 .profile-small {
    height:85px;
@@ -27,8 +19,49 @@ span.codeblock {
   height: 100px;
   padding: 5px;
   border: 1px solid black;    
-  background-color: lightgrey; 
+  background-color: grey; 
   font: Verdana;
   opacity: 0.5;
   color: black;
+}
+
+body {margin:0;} 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #FFDFC7;
+}
+body {
+	color: white;
+	background-image:
+		url("https://c1.wallpaperflare.com/preview/467/176/26/appetizer-dark-delicious-dining.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }

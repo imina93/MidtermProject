@@ -25,6 +25,11 @@ public class UserController {
 		return "user/userPage";
 	}
 	
+	@RequestMapping(path = "getUserPage.do")
+	public String showLoggedInUser(HttpSession session) {
+		return "user/userPage";
+	}
+	
 	@RequestMapping(path = "createUserSlot.do", method = RequestMethod.POST)
 	public String createUserForm(Model model) {
 		return "user/addUser";

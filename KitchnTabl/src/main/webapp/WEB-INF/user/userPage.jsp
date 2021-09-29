@@ -38,6 +38,33 @@
 	</div>
 	<br>
 	<br>
+	<br>	
+	<div>
+		<table id="table-div">
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Prep Time</th>
+				<th>Cook Time</th>
+				<th>Serving Size</th>
+				<th>Chef Rating</th>
+				<th>Category</th>
+				  
+			</tr>
+			<c:forEach var="recipe" items="${recipes}">
+				<tr>
+					<td>${recipe.name}</td>
+					<td>${recipe.description}</td>
+					<td>${recipe.prepTime}</td>
+					<td>${recipe.cookTime}</td>
+					<td>${recipe.servingSize}</td>
+					<td>${recipe.chefRating}</td>
+					<td>${recipe.category}</td>
+				</tr>
+
+			</c:forEach>
+		</table>
+	</div>
 	<br>
 	<br>
 	<form action="updateUserSlot.do" method="POST">
@@ -49,6 +76,10 @@
 		<input type="hidden" name="uid" value="${user.id}" /> <br> <input
 			type="submit" value="Delete Account" />
 	</form>
+	
+	
+	
+	
 	<!-- create go home button here -->
 	<a href="home.do"> <input type="submit" value="Return Home" />
 	</a>

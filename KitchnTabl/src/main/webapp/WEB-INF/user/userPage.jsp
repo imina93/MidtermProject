@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<div id="headerDiv">
+<%-- <div id="headerDiv">
 <ul>
   <li><a target="_self" class="active" href="home.do"><img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
@@ -44,7 +44,9 @@
   </c:if>
 </ul>
 </div>
-<div>
+<div> --%>
+
+<jsp:include page="../navbar.jsp"></jsp:include>
 	
 		<h3>${loggedInUser.username}'s Info:</h3>
 		<br>
@@ -56,7 +58,7 @@
 		Email: ${loggedInUser.email} <br>
 		Biography: ${loggedInUser.biography} <br>
 
-	</div>
+<!-- 	</div> -->
 	<br>
 	<br>
 	<form action="updateUserSlot.do" method="POST">
@@ -155,5 +157,6 @@
     	</tr>
 	</table>
 	</form>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

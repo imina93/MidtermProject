@@ -10,17 +10,12 @@
 <title>KT: Kitchn Tabl!</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
- .equal-width td {width: 50%; } ;
- .buttons tr td {width: 35%; table-layout: fixed;}
- #button { /* Use a hashtag(#) instead of a dot(.) */
-  width: 150px;
- }
 </style>
 </head>
 <body>
 
-<div id="headerDiv">
-<ul>
+ <%-- <div id="headerDiv">
+ <ul id="savnavbar">
   <li><a target="_self" class="active" href="home.do"><img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		class="home-small"
@@ -42,8 +37,10 @@
   <c:if test ="${ not empty loggedInUser}">
     <li style="float:right"><a href="logout.do">Logout</a></li>
   </c:if>
-</ul>
-</div>
+</ul> 
+</div> 
+ --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 	<h1>Welcome To The Kitchn Tabl</h1>
 	
@@ -82,5 +79,6 @@
     
 </table>
  </div>
+<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

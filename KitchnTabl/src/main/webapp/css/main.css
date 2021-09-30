@@ -31,7 +31,7 @@ body {
 	margin: 0;
 }
 
-ul {
+ul#savnavbar {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -43,11 +43,11 @@ ul {
 	height: 55px;
 }
 
-li {
+ul#savnavbar > li {
 	float: left;
 }
 
-li a {
+ul#savnavbar > li a {
 	display: block;
 	color: white;
 	text-align: center;
@@ -55,10 +55,9 @@ li a {
 	text-decoration: none;
 }
 
-li a:hover:not(.active) {
+ul#savnavbar > li a:hover:not(.active) {
 	background-color: #111;
 }
-
 body {
 	color: white;
 	background-image:

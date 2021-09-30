@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>KT: Add A New Image Url</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
+
 </head>
 <body>
 <div id="headerDiv">

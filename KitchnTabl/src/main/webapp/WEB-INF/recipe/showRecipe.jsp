@@ -10,10 +10,6 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<jsp:include page="../navbar.jsp"></jsp:include> 
-<br>
-<br>
-<br>
 <h2>${recipe.name}</h2>
 <div>
   <h5>Recipe Name: ${recipe.name} </h5>

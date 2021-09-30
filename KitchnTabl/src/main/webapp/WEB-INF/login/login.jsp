@@ -9,10 +9,12 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+
 <jsp:include page="../navbar.jsp"></jsp:include>
 <br>
 <br>
 <br>
+
 <h2>Log In</h2>
 <form action="login.do" method="POST">
 	<%-- Error messages --%>
@@ -36,6 +38,7 @@
 	
 	
 </form>
+
 <jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

@@ -83,7 +83,7 @@
 	<br>
 	<br>
 	
-	<form action="recipe/addRecipe.do" method="POST" id="addrecipe">
+	<form action="addRecipe.do" method="POST" id="addrecipe">
 	<h2>Add Recipe:</h2>
 	<table class="equal-width buttons">
 	<!--  | name  | instructions | calories | chef_rating | category| serving_size | cook_time_in_minutes | prep_time_in_minutes | user_id | image| description   -->

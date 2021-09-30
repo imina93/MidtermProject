@@ -50,7 +50,7 @@
 				<th>Category</th>
 				  
 			</tr>
-			<c:forEach var="recipe" items="${recipes}">
+			<c:forEach var="recipe" items="${loggedInUser.recipe}">
 				<tr>
 					<td>${recipe.name}</td>
 					<td>${recipe.description}</td>

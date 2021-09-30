@@ -69,12 +69,14 @@
 			type="submit" value="Delete Account" onclick=
 							"if (!(confirm('Are you sure you want to delete your profile? '))) return false" style="background-color:red; border-color:black; color:white"/>
 	</form>
+<br>
 	<br>
 	<br>	
 	<div>
 		<h3>User Recipe List:</h3>
 		<table id="table-div">
 			<tr>
+				<th>Preview</th>
 				<th>Name</th>
 				<th>Description</th>
 				<th>Prep Time</th>
@@ -86,7 +88,9 @@
 			</tr>
 			<c:forEach var="recipe" items="${loggedInUser.recipe}">
 				<tr>
-					<td><a href="showRecipe.do?rid=${recipe.id}">${recipe.name}</a></td>
+					<td><a href="searchrecipebyid.do?rid=${recipe.id}">
+					<img class="profile-picture" src="${recipe.image}"></img></a></td>
+					<td>${recipe.name}</td>
 					<td>${recipe.description}</td>
 					<td>${recipe.prepTime}</td>
 					<td>${recipe.cookTime}</td>

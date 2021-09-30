@@ -37,7 +37,7 @@
 <br>
 <br>
 <br>
-  <div>
+ <div>
 		<c:if test ="${not empty categories}">
 		<h2>Results:</h2>
 		<table id="table-div">

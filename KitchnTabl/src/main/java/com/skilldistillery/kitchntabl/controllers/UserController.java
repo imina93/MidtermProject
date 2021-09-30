@@ -36,7 +36,7 @@ public class UserController {
 			user.getRecipe().size();
 			return "user/userPage";
 		} else {
-		return "login";
+		return "login/login";
 		}
 	}
 	@RequestMapping(path = "createUserSlotHead.do", method = RequestMethod.GET)

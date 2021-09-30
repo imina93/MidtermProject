@@ -64,7 +64,7 @@
 			</tr>
 			<c:forEach var="recipe" items="${loggedInUser.recipe}">
 				<tr>
-					<td><a href="searchrecipebyid.do?rid=${recipe.id}">
+					<td><a href="showRecipe.do?rid=${recipe.id}">
 					<img class="profile-picture" src="${recipe.image}"></img></a></td>
 					<td>${recipe.name}</td>
 					<td>${recipe.description}</td>

@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-
+<c:if test ="${not empty recipes}">
 	<div>
 		<table id="table-div">
 			<tr>
@@ -39,6 +39,10 @@
 			</c:forEach>
 		</table>
 	</div>
+        </c:if>
+        <c:if test ="${empty recipes}">
+   	<h2>Search Results Empty</h2>
+        </c:if>
 	<hr />
 	<a href="home.do">Back to Home</a>
 

@@ -2,9 +2,15 @@ package com.skilldistillery.kitchntabl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class KitchnTablApplication {
+public class KitchnTablApplication extends SpringBootServletInitializer {
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(KitchnTablApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(KitchnTablApplication.class, args);

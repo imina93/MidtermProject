@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Cookbook Search Results</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
-<style>
-</style>
+<title>KT: Edit Successful</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 <div id="headerDiv">
@@ -36,29 +34,6 @@
   </c:if>
 </ul>
 </div>
-<div>
-	<c:if test ="${not empty cookbooks}">
-   		<h2>Results:</h2>
-		<table id="table-div">
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Description</th>
-			</tr>
-		<c:forEach var="cookbook" items="${cookbooks}">
-				<tr>
-					<td>${cookbook.id}</td>
-					<td>${cookbook.name}</td>
-					<td>${cookbook.description}</td>
-				</tr>
-
-		</c:forEach>
-		</table>
-	 </c:if>
-	<c:if test ="${ empty cookbooks}">
-   		<h2>Search Results Empty</h2>
-    </c:if>
-</div>
-	<hr />
+<h2>Edit successful</h2>
 </body>
 </html>

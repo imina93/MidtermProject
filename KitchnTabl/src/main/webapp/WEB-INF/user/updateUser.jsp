@@ -9,16 +9,31 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-
-<!-- 	<!-- 	User Name: <input type="text" name="username" /> <br>
-		<br> Password: <input type="text" name="password" />
-		User Profile Picture: (Right Click, Open Image In New Tab, Copy
-		And Then Paste The address) <input type="text" name="imageUrl" />
-		<br> Email: <input type="text" name="email" /> <br>
-		First Name: <input type="text" name="firstName" /> <br>
-		Last Name: <input type="text" name="lastName" /> <br> 
-		Biography: <input type="text" name="biography" /> <br> <input
-			type="submit" value="Join Now" /> -->
+<div id="headerDiv">
+<ul>
+  <li><a target="_blank" class="active" href="home.do"><img
+		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
+		class="home-small"
+		alt="Home"></a></li>
+  <c:if test ="${ empty loggedInUser}">
+    <li><a href="loginViewProfile.do">Profile</a></li>
+  </c:if>
+  <c:if test ="${ not empty loggedInUser}">
+    <li><a href="getUserPage.do">Profile</a></li>
+  </c:if>
+  <li><a href="searchcategories.do">Categories</a></li>
+  <li><a href="searchrecipe.do">Recipes</a></li>
+  <li><a href="searchcookbooks.do">Cookbooks</a></li>
+  <!-- if user is logged in href= logout if no user href=login -->
+  <c:if test ="${ empty loggedInUser}">
+  <li style="float:right"><a href="loginHead.do">Login</a></li>
+  <li style= "float:right"><a href="createUserSlotHead.do">Sign Up</a></li>
+  </c:if>
+  <c:if test ="${ not empty loggedInUser}">
+    <li style="float:right"><a href="logout.do">Logout</a></li>
+  </c:if>
+</ul>
+</div>
 	<h2>Current Details:</h2>
 	<div>
 		<h3>&nbsp;Profile Picture</h3>
@@ -28,7 +43,7 @@
 		</p>
 		
 		<p>User Name:  ${user.username}</p>
-		<p>Password:   ************</p>
+		<p>Password:   **********</p>
 		<p>Email:      ${user.email}</p>
 		<p>First Name: ${user.firstName}</p>
 		<p>Last Name:  ${user.lastName}</p>
@@ -37,7 +52,11 @@
 		<form action="updateUser.do" method="POST">
 			<input type="hidden" name="uid" value="${user.id}" />
 			User Name: <input type="text" value="${loggedInUser.username}" name="username" /> <br>
-			 Password: <input type="text" value="${loggedInUser.password}" name="password" /> <br>
+			<!-- <input type="password"
+	placeholder="Password"
+	id="password"
+	name="password"> -->
+			Password: <input type="password" placeholder="*********" value="${loggedInUser.password}" name="password" /> <br>
 			Profile Picture: (open an image in a new tab then pasted the link here): 
 			<input type="text" value="${loggedInUser.imageUrl}" name="imageUrl" /> <br>
 			Email: <input type="text" value="${loggedInUser.email}" name="email" /> <br> 

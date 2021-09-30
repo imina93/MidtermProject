@@ -19,7 +19,7 @@ public class LoginController {
 
 	@RequestMapping(path = "login.do", method = RequestMethod.GET)
 	public String goToLoginForm() {
-		return "login";
+		return "login/login";
 	}
 
 	@RequestMapping(path = "login.do", method=RequestMethod.POST)
@@ -30,12 +30,23 @@ public class LoginController {
 			return "home";
 		} else {
 			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
-			return "login";
+			return "login/login";
+		}
+	}
+//						This might work for the 405 error when logging in from header.. not sure
+	@RequestMapping(path = "loginHead.do", method=RequestMethod.GET)
+	public String logInHead(HttpSession session, User user, Model model) {
+		user = dao.logUserIn(user);
+		if(user != null) {
+			session.setAttribute("loggedInUser", user);
+			return "home";
+		} else {
+			return "login/login";
 		}
 	}
 	@RequestMapping(path = "loginViewProfile.do", method = RequestMethod.GET)
 	public String goToProfilePage() {
-		return "loginViewProfile";
+		return "login/loginViewProfile";
 	}
 	
 	@RequestMapping(path = "loginViewProfile.do", method = RequestMethod.POST)
@@ -46,13 +57,13 @@ public class LoginController {
 			return "user/userPage";
 		} else {
 			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
-			return "login";
+			return "login/login";
 		}
 	}
 
 	@RequestMapping(path = "logout.do")
 	public String logOut(HttpSession session) {
 		session.removeAttribute("loggedInUser");
-		return "logout";
+		return "login/logout";
 	}
 }

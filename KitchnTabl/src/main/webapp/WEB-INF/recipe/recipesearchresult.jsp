@@ -5,10 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Cookbook Search Results</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
-<style>
-</style>
+<title>Recipe Search Results</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
 <div id="headerDiv">
@@ -36,29 +34,39 @@
   </c:if>
 </ul>
 </div>
-<div>
-	<c:if test ="${not empty cookbooks}">
-   		<h2>Results:</h2>
+
+	<div>
+	<c:if test ="${not empty recipes}">
+		   	<h2>Search Results:</h2>
 		<table id="table-div">
 			<tr>
-				<th>ID</th>
 				<th>Name</th>
 				<th>Description</th>
+				<th>Prep Time</th>
+				<th>Cook Time</th>
+				<th>Serving Size</th>
+				<th>Chef Rating</th>
+				<th>Category</th>
+				  
 			</tr>
-		<c:forEach var="cookbook" items="${cookbooks}">
+			<c:forEach var="recipe" items="${recipes}">
 				<tr>
-					<td>${cookbook.id}</td>
-					<td>${cookbook.name}</td>
-					<td>${cookbook.description}</td>
+					<td>${recipe.name}</td>
+					<td>${recipe.description}</td>
+					<td>${recipe.prepTime}</td>
+					<td>${recipe.cookTime}</td>
+					<td>${recipe.servingSize}</td>
+					<td>${recipe.chefRating}</td>
+					<td>${recipe.category}</td>
 				</tr>
 
-		</c:forEach>
+			</c:forEach>
 		</table>
-	 </c:if>
-	<c:if test ="${ empty cookbooks}">
-   		<h2>Search Results Empty</h2>
-    </c:if>
-</div>
+		</c:if>
+			<c:if test ="${empty recipes}">
+		   	<h2>Search Results Empty</h2>
+		</c:if>
+	</div>
 	<hr />
 </body>
 </html>

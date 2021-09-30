@@ -11,5 +11,6 @@ public interface RecipeDAO {
 	public Recipe createRecipe(Recipe recipe);
 	public Recipe updateRecipe(Recipe recipe, int id);
 	public boolean deleteRecipe (int recipeId);
+	List<Recipe> randomRecipeList(int size);
 
 }

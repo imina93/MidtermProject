@@ -27,15 +27,14 @@ public class RecipeController {
 		model.addAttribute("recipe",recipe);
 		
 		
-		return "recipe/recipebyidresult";
+		return "recipebyidresult";
 	}
 	@RequestMapping(path = "showRecipe.do")
 	public String showUserRecipeById(Integer rid, Model model) {
 		Recipe recipe = dao.findRecipe(rid);
 		model.addAttribute("recipe",recipe);
 		
-		
-		return "recipe/showRecipe";
+		return "showRecipe";
 	}
 	
 	@RequestMapping(path = "searchrecipe.do")
@@ -43,7 +42,7 @@ public class RecipeController {
 		List<Recipe> recipes = dao.findRecipeByKeyword(keyword);
 		model.addAttribute("recipes",recipes);
 		
-		return "recipe/recipesearchresult";
+		return "recipesearchresult";
 	}
 
 	@RequestMapping(path = "addRecipe.do", method = RequestMethod.POST)
@@ -54,7 +53,7 @@ public class RecipeController {
 		model.addAttribute("recipe" ,addRecipe);
 		
 		
-		return "recipe/recipeAdded";
+		return "recipeAdded";
 	}
 	
 	
@@ -64,7 +63,7 @@ public class RecipeController {
 		model.addAttribute("recipe", dbRecipe);
 		
 
-		return "recipe/recipeEdited";
+		return "recipeEdited";
 		
 	}
 	
@@ -73,7 +72,7 @@ public class RecipeController {
 		boolean result = dao.deleteRecipe(rid);
 		
 		
-		return "recipe/recipeDeleted";
+		return "recipeDeleted";
 		
 	} 
 	

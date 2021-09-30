@@ -9,6 +9,7 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 <div id="headerDiv">
 <ul>
   <li><a target="_self" class="active" href="home.do"><img
@@ -70,5 +71,6 @@
 		</c:if>
 	</div>
 	<hr/>
+	<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

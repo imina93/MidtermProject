@@ -10,6 +10,7 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 <div id="headerDiv">
 <ul>
   <li><a target="_self" class="active" href="home.do"><img
@@ -39,5 +40,6 @@
 <br>
 <br>
 	<h2>You Are Now A Member!</h2>
+	<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

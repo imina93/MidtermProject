@@ -9,6 +9,7 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 <div id="headerDiv">
 <ul>
   <li><a target="_blank" class="active" href="home.do"><img
@@ -123,5 +124,6 @@
 			</a>
 		</form>
 	</div>
+	<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

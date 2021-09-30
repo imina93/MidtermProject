@@ -11,9 +11,10 @@
 </style>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
 <div id="headerDiv">
 <ul>
-  <li><a target="_blank" class="active" href="home.do"><img
+  <li><a target="_self" class="active" href="home.do"><img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		class="home-small"
 		alt="Home"></a></li>
@@ -36,6 +37,10 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <h1>Logout Successful, Please Return To Homepage</h1>
+<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

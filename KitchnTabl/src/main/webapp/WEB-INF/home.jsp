@@ -75,7 +75,14 @@
       	<tr>   
         	<td style="text-align:right"><label>Search Recipe By ID: <input type="text" name="rid" form="searchrecipebyid"/></label></td>
             <td><input type="submit" value="Search Recipes" form="searchrecipebyid" id="button"/></td>
-   		 </tr>    
+   		 </tr>   
+   		 
+ <!--   		   <li><a href="searchcategories.do">Categories</a></li>
+  <li><a href="searchrecipe.do">Recipes</a></li>
+  <li><a href="searchcookbooks.do">Cookbooks</a></li> -->
+   		 
+   		 
+   		  
     
 </table>
  </div>

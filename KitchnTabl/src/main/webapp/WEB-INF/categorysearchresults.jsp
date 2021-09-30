@@ -15,7 +15,7 @@
 <body>
 
   <div>
-  <span class="codeblock">
+  <span>
 		<c:if test ="${not empty categories}">
 		<table id="table-div">
 			<tr>

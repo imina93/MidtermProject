@@ -19,15 +19,31 @@
 
 </head>
 <body>
+<ul>
+  <li><a target="_blank" href="home.do"><img
+		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
+		class="home-small"
+		alt="Home"></a></li>
+  <li><a href="searchcategories.do">Categories</a></li>
+  <li><a href="searchrecipe.do">Recipes</a></li>
+  <li><a href="searchcookbooks.do">Cookbooks</a></li>
+  <!-- if user is logged in href= logout if no user href=login -->
+  <c:if test ="${ empty loggedInUser}">
+  	<li style= "float:right"><a href="createUserSlot.do">Sign Up</a></li>
+    <li style="float:right"><a href="login.do">Login</a></li>
+  </c:if>
+  <c:if test ="${ not empty loggedInUser}">
+    <li style="float:right"><a href="logout.do">Logout</a></li>
+  </c:if>
+</ul>
 	<div>
 	
 		<h3>${loggedInUser.username}'s Info:</h3>
 		<br>
-		<h3>&nbsp;
-			Profile Picture</h3>
-		<img class="profile-picture" src="${loggedInUser.imageUrl}"
-			style="float: left; margin-right: 15px;" width="200" height="200">
+		<h3>&nbsp; Profile Picture</h3>
+		<img class="profile-picture" src="${loggedInUser.imageUrl}">
 
+		User Name: ${loggedInUser.username} <br>
 		First Name: ${loggedInUser.firstName} <br>
 		Last Name: ${loggedInUser.lastName} <br>
 		Email: ${loggedInUser.email} <br>

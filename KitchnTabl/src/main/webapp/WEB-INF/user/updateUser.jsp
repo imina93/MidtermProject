@@ -28,7 +28,7 @@
 		</p>
 		
 		<p>User Name:  ${user.username}</p>
-		<p>Password:   ${user.password}</p>
+		<p>Password:   ************</p>
 		<p>Email:      ${user.email}</p>
 		<p>First Name: ${user.firstName}</p>
 		<p>Last Name:  ${user.lastName}</p>

@@ -21,6 +21,9 @@ public class UserDAOImpl implements UserDAO {
 	public User createUser(User user) {
 		em.persist(user);
 		user.setRole("user");
+		if(user.getImageUrl().equals(null)) {
+			user.setImageUrl("https://bloximages.newyork1.vip.townnews.com/tulsaworld.com/content/tncms/assets/v3/editorial/5/be/5be3da86-8634-5334-9388-44ab59f88c1d/5c1d63798ff3e.image.jpg?resize=1200%2C898");
+		}
 		em.flush();
 		em.close();
 		return user;

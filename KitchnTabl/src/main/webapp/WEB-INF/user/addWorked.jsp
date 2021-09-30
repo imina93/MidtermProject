@@ -10,8 +10,11 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
 	<h2>You Are Now A Member!</h2>
-
-	<a href="home.do"> <input type="submit" value="Return Home" /></a>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

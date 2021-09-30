@@ -3,59 +3,60 @@
 h1 {
 	text-align: center;
 }
-
-
-.profile-small {
-   height:85px;
-   width: 85px;
-   border-radius: 200%;
-   border: 3px solid #FEDE00;
-   background-color: white;
+.profile-picture {
+	height: 300px;
+	width: 300px;
+	border: 8px solid #000000;
+	background-color: white;
+	float: left;
+	margin-right: 15px;
+	
 }
 
-span.codeblock {
-  display: block;
-  width: 300px;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid black;    
-  background-color: grey; 
-  font: Verdana;
-  opacity: 0.5;
-  color: black;
+.home-small {
+	height: 40px;
+	width: 40px;
+	border-radius: 200%;
+	border: 3px solid #FEDE00;
+	background-color: white;
+	position: relative;
+	bottom: 7px;
+	left: 5px;
+	float: center;
 }
 
-body {margin:0;} 
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
+
+body {
+	margin: 0;
 }
 
-li {
-  float: left;
+ul#savnavbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 55px;
 }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+ul#savnavbar > li {
+	float: left;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+ul#savnavbar > li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
-.active {
-  background-color: #FFDFC7;
+ul#savnavbar > li a:hover:not(.active) {
+	background-color: #111;
 }
 body {
 	color: white;

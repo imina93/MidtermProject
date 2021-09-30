@@ -5,18 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Category Search Results</title>
+<title>KT: Category Search Results</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
-<style>
-
-</style>
-
 </head>
 <body>
-
-  <div>
-  <span class="codeblock">
+<jsp:include page="navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
+ <div>
 		<c:if test ="${not empty categories}">
+		<h2>Results:</h2>
 		<table id="table-div">
 			<tr>
 				<th>ID</th>
@@ -34,13 +33,11 @@
 		</table>
 		
         </c:if>
-        </span> 
 	<c:if test ="${ empty categories}">
    	<h2>Search Results Empty</h2>
         </c:if>
 	</div>
 	<hr />
-	<a href="home.do">Back to Home</a>
-
+	<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

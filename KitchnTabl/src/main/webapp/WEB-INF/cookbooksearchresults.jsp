@@ -5,36 +5,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Cookbook Search Results</title>
+<title>KT: Cookbook Search Results</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
 </style>
 </head>
 <body>
+<jsp:include page="navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
 <div>
-			<c:if test ="${not empty cookbooks}">
+	<c:if test ="${not empty cookbooks}">
+   		<h2>Results:</h2>
 		<table id="table-div">
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
 				<th>Description</th>
 			</tr>
-			<c:forEach var="cookbook" items="${cookbooks}">
+		<c:forEach var="cookbook" items="${cookbooks}">
 				<tr>
 					<td>${cookbook.id}</td>
 					<td>${cookbook.name}</td>
 					<td>${cookbook.description}</td>
 				</tr>
 
-			</c:forEach>
+		</c:forEach>
 		</table>
-		  </c:if>
-		  <c:if test ="${ empty cookbooks}">
-   	<h2>Search Results Empty</h2>
-        </c:if>
-	</div>
+	 </c:if>
+	<c:if test ="${ empty cookbooks}">
+   		<h2>Search Results Empty</h2>
+    </c:if>
+</div>
 	<hr />
-	<a href="home.do">Back to Home</a>
-
+	<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

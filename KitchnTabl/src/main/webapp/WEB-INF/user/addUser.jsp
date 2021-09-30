@@ -9,13 +9,13 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<a target="_blank" href="home.do"> <img
-		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
-		class="profile-small"
-		alt="Home">
-	</a>
-
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
+<div>
 <form action="createUser.do" method="POST">
+<h2>Join Now!</h2>
 		<table>
 
 			<tr>
@@ -58,6 +58,7 @@
 		</table>
 			 <input type="submit" value="Submit" />
 	</form>
-	<a href="home.do"> <input type="submit" value="Return Home" /></a>
+	</div>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

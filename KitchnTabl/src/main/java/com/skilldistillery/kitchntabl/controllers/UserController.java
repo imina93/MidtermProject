@@ -27,9 +27,22 @@ public class UserController {
 	
 	@RequestMapping(path = "getUserPage.do")
 	public String showLoggedInUser(HttpSession session) {
-		return "user/userPage";
+		
+		User user = (User) session.getAttribute("loggedInUser");
+		user = dao.logUserIn(user);
+		if (user != null) {
+			session.setAttribute("loggedInUser", user);
+			System.out.println(user);
+			user.getRecipe().size();
+			return "user/userPage";
+		} else {
+		return "login/login";
+		}
 	}
-	
+	@RequestMapping(path = "createUserSlotHead.do", method = RequestMethod.GET)
+	public String goToUserForm() {
+		return "user/addUser";
+	}
 	@RequestMapping(path = "createUserSlot.do", method = RequestMethod.POST)
 	public String createUserForm(Model model) {
 		return "user/addUser";
@@ -53,7 +66,7 @@ public class UserController {
 		}
 	}
 
-	// update reseller
+
 	@RequestMapping(path = "updateUser.do", method = RequestMethod.POST)
 	public String updateUser(Integer uid, HttpSession session, User user, Model model) {
 		user = dao.updateUser(uid, user);

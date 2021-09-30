@@ -5,22 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Recipe Deleted</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<title>KT: Add Recipe</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<h2>Recipe Deleted</h2>
-
-
+<jsp:include page="../navbar.jsp"></jsp:include>
 <br>
 <br>
-<div class="footer">
-	<p>
-		<a href="home.do"><strong>Return to Home Page</strong></a>
-		<br>
-		<br>
-	
-	</p>
-	</div>
+<br>
+<h2>Recipe Added</h2>
+<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

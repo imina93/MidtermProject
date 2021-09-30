@@ -6,14 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Recipe Search Results</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
-<style>
-
-</style>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
 	<div>
+	<c:if test ="${not empty recipes}">
+		   	<h2>Search Results:</h2>
 		<table id="table-div">
 			<tr>
 				<th>Name</th>
@@ -38,9 +40,12 @@
 
 			</c:forEach>
 		</table>
+		</c:if>
+			<c:if test ="${empty recipes}">
+		   	<h2>Search Results Empty</h2>
+		</c:if>
 	</div>
-	<hr />
-	<a href="home.do">Back to Home</a>
-
+	<hr/>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

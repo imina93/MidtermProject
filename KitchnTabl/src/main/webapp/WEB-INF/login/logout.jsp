@@ -6,17 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>KT: Logout</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 <style>
 </style>
 </head>
-<h1>Logout Successful, Please Return To Homepage</h1>
 <body>
-<div>
-		
-	</div>
-	<hr />
-	<a href="home.do">Back to Home</a>
-
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
+<h1>Logout Successful, Please Return To Homepage</h1>
+<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

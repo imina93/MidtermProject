@@ -9,9 +9,11 @@
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-	<h1>Successfully Updated Your Information!</h1>
-
-	<a href="home.do"> <input type="submit" value="Return Home" /> </a>
-
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
+	<h2>Successfully Updated Your Information!</h2>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

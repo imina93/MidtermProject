@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Deleted User!</title>
+<title>KT: Recipe Deleted</title>
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
@@ -14,7 +13,7 @@
 <br>
 <br>
 <br>
-<h2>We Hate To See You Leave The KitchnTabl But You're Always Welcome Back For Seconds!</h2>
+<h2>Recipe Deleted</h2>
 <jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

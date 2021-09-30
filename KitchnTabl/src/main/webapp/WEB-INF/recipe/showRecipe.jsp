@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Show Recipe</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<title>KT: ${recipe.name}</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-
+<h2>${recipe.name}</h2>
 <div>
   <h5>Recipe Name: ${recipe.name} </h5>
   <h5>Description:${recipe.description}  Prep Time: ${recipe.prepTime} </h5>
@@ -22,7 +24,7 @@
 
 <div>
 <form action="editRecipe.do" method="POST">
-	<legend><h5>Edit Recipe</h5></legend>	
+	<h5>Edit Recipe</h5>	
 	<br>
 		Recipe ID: <input type="text" name="rid" value="${recipe.id}" /> <br>
 		Recipe Name: <input type="text" name="name" value="${recipe.name}" /> <br>
@@ -46,6 +48,7 @@
 		<input type="hidden" name="rid" value="${recipe.id}" /> <br> <input
 			type="submit" value="Delete Recipe" />
 	</form>
-	<a href="home.do"> <input type="submit" value="Return Home" /></a>
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
+	
 </body>
 </html>

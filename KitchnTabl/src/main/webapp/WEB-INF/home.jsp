@@ -10,17 +10,13 @@
 <title>KT: Kitchn Tabl!</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
 <style>
- .equal-width td {width: 50%; } ;
- .buttons tr td {width: 35%; table-layout: fixed;}
- #button { /* Use a hashtag(#) instead of a dot(.) */
-  width: 150px;
- }
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a target="_blank" href="home.do"><img
+ <%-- <div id="headerDiv">
+ <ul id="savnavbar">
+  <li><a target="_self" class="active" href="home.do"><img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		class="home-small"
 		alt="Home"></a></li>
@@ -35,14 +31,16 @@
   <li><a href="searchcookbooks.do">Cookbooks</a></li>
   <!-- if user is logged in href= logout if no user href=login -->
   <c:if test ="${ empty loggedInUser}">
-  	<li style= "float:right"><a href="createUserSlot.do">Sign Up</a></li>
-    <li style="float:right"><a href="login.do">Login</a></li>
+  <li style="float:right"><a href="loginHead.do">Login</a></li>
+  <li style= "float:right"><a href="createUserSlotHead.do">Sign Up</a></li>
   </c:if>
   <c:if test ="${ not empty loggedInUser}">
     <li style="float:right"><a href="logout.do">Logout</a></li>
   </c:if>
-</ul>
-<div id="headerDiv">
+</ul> 
+</div> 
+ --%>
+<jsp:include page="navbar.jsp"></jsp:include>
 
 	<h1>Welcome To The Kitchn Tabl</h1>
 	
@@ -77,20 +75,17 @@
       	<tr>   
         	<td style="text-align:right"><label>Search Recipe By ID: <input type="text" name="rid" form="searchrecipebyid"/></label></td>
             <td><input type="submit" value="Search Recipes" form="searchrecipebyid" id="button"/></td>
-   		 </tr>
-    
-    	
-		    
+   		 </tr>   
+   		 
+ <!--   		   <li><a href="searchcategories.do">Categories</a></li>
+  <li><a href="searchrecipe.do">Recipes</a></li>
+  <li><a href="searchcookbooks.do">Cookbooks</a></li> -->
+   		 
+   		 
+   		  
     
 </table>
-
-	<div>
-		<form action="createUserSlot.do" method="POST">
-			<input type="submit" value="Join Now" />
-		</form>
-	</div>
-	
  </div>
-</div>
+<jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

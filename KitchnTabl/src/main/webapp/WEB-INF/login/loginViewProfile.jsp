@@ -5,21 +5,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Log In</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<title>KT: Log In</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
 <h2>Log In</h2>
 <form action="loginViewProfile.do" method="POST">
 	<%-- Error messages --%>
-	<input type="text" name="username">
-	<input type="password" name="password"/>
+	<div class="wrapper">
+	<input type="text"
+	placeholder="User Name"
+	id="username"
+	name="username">
+	</div> 
+	<div class="wrapper">
+	<input type="password"
+	placeholder="Password"
+	id="password"
+	name="password">
+	<input type="submit" value="Log In" > 
+	</div>  
   <c:if test ="${not empty loginError}">
            ${loginError}
         </c:if>
-	<input type="submit" value="Log In" > 
 	
 	
 </form>
+<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

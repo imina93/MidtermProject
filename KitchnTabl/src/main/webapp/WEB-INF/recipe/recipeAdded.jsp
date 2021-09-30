@@ -5,22 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KT: Edit Successful</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
+<title>KT: Added Recipe</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<h2>Edit successful</h2>
-
-
+<jsp:include page="../navbar.jsp"></jsp:include>
 <br>
 <br>
-<div class="footer">
-	<p>
-		<a href="home.do"><strong>Return to Home Page</strong></a>
-		<br>
-		<br>
-	
-	</p>
-	</div>
+<br>
+<h2>Add successful</h2>
+<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

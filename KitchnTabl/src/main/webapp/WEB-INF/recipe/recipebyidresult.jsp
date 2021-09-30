@@ -5,14 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Recipe Search Results</title>
-<jsp:include page="bootstrapHead.jsp"></jsp:include>
-<style>
-
-</style>
+<title>KT: Recipe Search Results</title>
+<jsp:include page="../bootstrapHead.jsp"></jsp:include>
 </head>
 <body>
-<c:if test ="${not empty recipes}">
+<jsp:include page="../navbar.jsp"></jsp:include>
+<br>
+<br>
+<br>
+<h2>Results:</h2>
 	<div>
 		<table id="table-div">
 			<tr>
@@ -25,7 +26,7 @@
 				<th>Category</th>
 				  
 			</tr>
-			<c:forEach var="recipe" items="${recipes}">
+			<c:forEach var="recipe" items="${loggedInUser.recipe}">
 				<tr>
 					<td>${recipe.name}</td>
 					<td>${recipe.description}</td>
@@ -39,12 +40,7 @@
 			</c:forEach>
 		</table>
 	</div>
-        </c:if>
-        <c:if test ="${empty recipes}">
-   	<h2>Search Results Empty</h2>
-        </c:if>
 	<hr />
-	<a href="home.do">Back to Home</a>
-
+	<jsp:include page="../bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

@@ -22,12 +22,12 @@ public class Recipe {
 
 	private String name;
 	private String instructions;
-	private int calories;
+	private Integer calories;
 	private String image;
 	private String description;
 
 	@Column(name = "chef_rating")
-	private int chefRating;
+	private Integer chefRating;
 
 	private String category;
 
@@ -35,10 +35,10 @@ public class Recipe {
 	private String servingSize;
 
 	@Column(name = "cook_time_in_minutes")
-	private int cookTime;
+	private Integer cookTime;
 
 	@Column(name = "prep_time_in_minutes")
-	private int prepTime;
+	private Integer prepTime;
 
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -62,11 +62,11 @@ public class Recipe {
 		super();
 	}
 
-	public int getPrepTime() {
+	public Integer getPrepTime() {
 		return prepTime;
 	}
 
-	public void setPrepTime(int prepTime) {
+	public void setPrepTime(Integer prepTime) {
 		this.prepTime = prepTime;
 	}
 
@@ -94,19 +94,19 @@ public class Recipe {
 		this.instructions = instructions;
 	}
 
-	public int getCalories() {
+	public Integer getCalories() {
 		return calories;
 	}
 
-	public void setCalories(int calories) {
+	public void setCalories(Integer calories) {
 		this.calories = calories;
 	}
 
-	public int getChefRating() {
+	public Integer getChefRating() {
 		return chefRating;
 	}
 
-	public void setChefRating(int chefRating) {
+	public void setChefRating(Integer chefRating) {
 		this.chefRating = chefRating;
 	}
 
@@ -126,11 +126,11 @@ public class Recipe {
 		this.servingSize = servingSize;
 	}
 
-	public int getCookTime() {
+	public Integer getCookTime() {
 		return cookTime;
 	}
 
-	public void setCookTime(int cookTime) {
+	public void setCookTime(Integer cookTime) {
 		this.cookTime = cookTime;
 	}
 

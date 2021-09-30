@@ -34,6 +34,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <h2>Results:</h2>
 	<div>
 		<table id="table-div">

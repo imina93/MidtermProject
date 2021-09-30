@@ -34,6 +34,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 	<h2>Successfully Updated Your Information!</h2>
 </body>
 </html>

@@ -35,6 +35,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 	<h2>You Are Now A Member!</h2>
 </body>
 </html>

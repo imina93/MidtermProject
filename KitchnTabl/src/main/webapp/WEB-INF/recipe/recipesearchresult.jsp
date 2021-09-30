@@ -34,7 +34,9 @@
   </c:if>
 </ul>
 </div>
-
+<br>
+<br>
+<br>
 	<div>
 	<c:if test ="${not empty recipes}">
 		   	<h2>Search Results:</h2>
@@ -67,6 +69,6 @@
 		   	<h2>Search Results Empty</h2>
 		</c:if>
 	</div>
-	<hr />
+	<hr/>
 </body>
 </html>

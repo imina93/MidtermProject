@@ -35,6 +35,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <h2>${recipe.name}</h2>
 <div>
   <h5>Recipe Name: ${recipe.name} </h5>

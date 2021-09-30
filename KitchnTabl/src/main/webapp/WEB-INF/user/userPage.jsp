@@ -44,20 +44,17 @@
   </c:if>
 </ul>
 </div>
+<div>
 	
 		<h3>${loggedInUser.username}'s Info:</h3>
 		<br>
 		<h3>&nbsp; Profile Picture</h3>
 		<img class="profile-picture" src="${loggedInUser.imageUrl}">
-
 		User Name: ${loggedInUser.username} <br>
 		First Name: ${loggedInUser.firstName} <br>
 		Last Name: ${loggedInUser.lastName} <br>
 		Email: ${loggedInUser.email} <br>
 		Biography: ${loggedInUser.biography} <br>
-
-
-
 
 	</div>
 	<br>
@@ -75,8 +72,8 @@
 	<br>
 	<br>	
 	<div>
-		<table id="table-div">
 		<h3>User Recipe List:</h3>
+		<table id="table-div">
 			<tr>
 				<th>Name</th>
 				<th>Description</th>
@@ -106,55 +103,53 @@
 	<br>
 	<br>
 	
-	<form action="addRecipe.do" method="POST" id="addrecipe">
-	<legend>Add Recipe:</legend>
+	<form action="recipe/addRecipe.do" method="POST" id="addrecipe">
+	<h2>Add Recipe:</h2>
 	<table class="equal-width buttons">
-	
+	<!--  | name  | instructions | calories | chef_rating | category| serving_size | cook_time_in_minutes | prep_time_in_minutes | user_id | image| description   -->
 		<tr>
     		<td style="text-align:right"><label>Recipe Name: </label></td>
-			<td><input type="text" name="name" form="addrecipe" /> </td>    
+			<td><input type="text" name="name"/> </td>    
     	</tr>
     	<tr>
     		<td style="text-align:right"><label>Recipe Instructions: </label></td>
-			<td><input type="text" name="instructions" form="addrecipe" /> </td>    
+			<td><input type="text" name="instructions"/> </td>    
     	</tr>
 	
 	    <tr>
     		<td style="text-align:right"><label>Calories: </label></td>
-			<td><input type="text" name="calories" form="addrecipe" /> </td>    
+			<td><input type="text" name="calories"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Chef Rating: </label></td>
-			<td><input type="text" name="chefRating" form="addrecipe" /> </td>    
+			<td><input type="text" name="chefRating"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Category: </label></td>
-			<td><input type="text" name="catagory" form="addrecipe" /> </td>    
+			<td><input type="text" name="category"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Serving Size: </label></td>
-			<td><input type="text" name="servingSize" form="addrecipe" /> </td>    
+			<td><input type="text" name="servingSize"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Cook Time: </label></td>
-			<td><input type="text" name="cookTime" form="addrecipe" /> </td>    
+			<td><input type="text" name="cookTimeInMinutes"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Prep Time: </label></td>
-			<td><input type="text" name="prepTime" form="addrecipe" /> </td>    
+			<td><input type="text" name="prepTimeInMinutes"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Add a link to an image: </label></td>
-			<td><input type="text" name="image" form="addrecipe" /> </td>    
+			<td><input type="text" name="image"/> </td>    
     	</tr>
     	 <tr>
     		<td style="text-align:right"><label>Description </label></td>
-			<td><input type="text" name="description" form="addrecipe" /> </td>    
+			<td><input type="text" name="description"/></td>    
+			<td><input type="submit" value="Add Recipe" form="addrecipe"/></td>
     	</tr>
 	</table>
-			 <br> 
-			<input type="submit"
-			value="Add Recipe" form="addrecipe"/>
 	</form>
 </body>
 </html>

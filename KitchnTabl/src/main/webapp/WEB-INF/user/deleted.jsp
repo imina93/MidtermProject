@@ -35,6 +35,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <h2>We Hate To See You Leave The KitchnTabl But You're Always Welcome Back For Seconds!</h2>
 </body>
 </html>

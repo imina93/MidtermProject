@@ -34,6 +34,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <div>
 <form action="createUser.do" method="POST">
 <h2>Join Now!</h2>

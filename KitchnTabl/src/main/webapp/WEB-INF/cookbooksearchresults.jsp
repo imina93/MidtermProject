@@ -36,6 +36,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <div>
 	<c:if test ="${not empty cookbooks}">
    		<h2>Results:</h2>

@@ -34,6 +34,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 	<h2>Current Details:</h2>
 	<div>
 		<h3>&nbsp;Profile Picture</h3>

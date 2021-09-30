@@ -22,7 +22,7 @@ public class Recipe {
 
 	private String name;
 	private String instructions;
-	private int calories;
+	private Integer calories;
 	private String image;
 	private String description;
 
@@ -94,11 +94,11 @@ public class Recipe {
 		this.instructions = instructions;
 	}
 
-	public int getCalories() {
+	public Integer getCalories() {
 		return calories;
 	}
 
-	public void setCalories(int calories) {
+	public void setCalories(Integer calories) {
 		this.calories = calories;
 	}
 

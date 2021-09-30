@@ -34,6 +34,9 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
 <h2>Recipe Deleted</h2>
 </body>
 </html>

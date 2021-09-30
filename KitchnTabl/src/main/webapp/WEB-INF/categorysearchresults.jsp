@@ -34,8 +34,10 @@
   </c:if>
 </ul>
 </div>
+<br>
+<br>
+<br>
   <div>
-  <span>
 		<c:if test ="${not empty categories}">
 		<h2>Results:</h2>
 		<table id="table-div">
@@ -55,7 +57,6 @@
 		</table>
 		
         </c:if>
-        </span> 
 	<c:if test ="${ empty categories}">
    	<h2>Search Results Empty</h2>
         </c:if>

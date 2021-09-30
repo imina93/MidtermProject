@@ -26,6 +26,14 @@ public class RecipeDaoImpl implements RecipeDAO {
 				return em.find(Recipe.class, recipeId);
 	}
 	
+	@Override
+	public List<Recipe> randomRecipeList(int size) {
+		List<Recipe> recipes = null;
+		String sql = "SELECT * FROM recipe ORDER BY RAND() LIMIT :s";
+		recipes = em.createNativeQuery(sql, Recipe.class).setParameter("s", size).getResultList();
+		return recipes;
+	}
+	
 
 	@Override
 	public List<Recipe> findRecipeByKeyword(String keyword) {

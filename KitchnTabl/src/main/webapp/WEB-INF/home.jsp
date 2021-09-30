@@ -9,12 +9,16 @@
 <meta charset="UTF-8">
 <title>KT: Kitchn Tabl!</title>
 <jsp:include page="bootstrapHead.jsp"></jsp:include>
+<link rel="stylesheet" href="css/flipcard.css">
 <style>
 </style>
 </head>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
 	<h1>Welcome To The Kitchn Tabl</h1>
+	<jsp:include page="recipeshowcase.jsp"></jsp:include>
+	<%-- 
+	
 		<div class="container-fluid">
 		<form action="getUser.do?id=${user.id}" method="GET"> <!-- idea -->
 			User Id: <input type="text" name="uid" /> <input type="submit" value="Show User Info By Id" />
@@ -56,7 +60,7 @@
    		  
     
 </table>
- </div>
+ </div> --%>
 <jsp:include page="bootstrapfoot.jsp"></jsp:include>
 </body>
 </html>

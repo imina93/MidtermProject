@@ -12,7 +12,7 @@
 <body>
 <div id="headerDiv">
 <ul>
-  <li><a target="_blank" class="active" href="home.do"><img
+  <li><a target="_self" class="active" href="home.do"><img
 		src="https://cdn-icons-png.flaticon.com/512/184/184514.png"
 		class="home-small"
 		alt="Home"></a></li>

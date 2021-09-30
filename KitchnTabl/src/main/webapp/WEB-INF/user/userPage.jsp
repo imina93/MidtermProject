@@ -8,6 +8,15 @@
 <title>KT: Users Details</title>
 <!--show.jsp is in a folder so for page= i used ../ to get it out and read bootstrapHead.jsp   -->
 <jsp:include page="../bootstrapHead.jsp"></jsp:include>
+<style>
+<style>
+ .equal-width td {width: 50%; } ;
+ .buttons tr td {width: 35%; table-layout: fixed;}
+ #button { /* Use a hashtag(#) instead of a dot(.) */
+  width: 250px;
+ }
+</style>
+
 </head>
 <body>
 	<div>
@@ -36,8 +45,9 @@
 	</form>
 	<br>
 	<form action="deleteUser.do" method="POST">
-		<input type="hidden" name="uid" value="${user.id}" /> <br> <input
-			type="submit" value="Delete Account" />
+		<input type="hidden" name="uid" value="${user.id}" /> <br> <input 
+			type="submit" value="Delete Account" onclick=
+							"if (!(confirm('Are you sure you want to delete your profile? '))) return false" style="background-color:red; border-color:black; color:white"/>
 	</form>
 	<br>
 	<br>	
@@ -72,25 +82,59 @@
 	<br>
 	<br>
 	<br>
-	<form action="addRecipe.do" method="POST">
-		<legend>Add Recipe:</legend>
-		Recipe Name: <input type="text" name="name" /> <br>
-		Recipe Instructions: <input type="text" name="instructions" /> <br>
-		Calories: <input type="text" name="calories" /> <br>
-		Chef Rating: <input type="text" name="chefRating" /> <br>
-		Category: <input type="text" name="category" /> <br>
-		Serving Size: <input type="text" name="servingSize" /> <br>
-		Cook Time: <input type="text" name="cookTime" /> <br>
-		Prep Time: <input type="text" name="prepTime" /> <br>
-		Add An Image: <input type="text" name="image" /> <br>
-		Description: <input type="text" name="description" /> <br>
-		
+	
+	<form action="addRecipe.do" method="POST" id="addrecipe">
+	<legend>Add Recipe:</legend>
+	<table class="equal-width buttons">
+	
+		<tr>
+    		<td style="text-align:right"><label>Recipe Name: </label></td>
+			<td><input type="text" name="name" form="addrecipe" /> </td>    
+    	</tr>
+    	<tr>
+    		<td style="text-align:right"><label>Recipe Instructions: </label></td>
+			<td><input type="text" name="instructions" form="addrecipe" /> </td>    
+    	</tr>
+	
+	    <tr>
+    		<td style="text-align:right"><label>Calories: </label></td>
+			<td><input type="text" name="calories" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Chef Rating: </label></td>
+			<td><input type="text" name="chefRating" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Category: </label></td>
+			<td><input type="text" name="catagory" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Serving Size: </label></td>
+			<td><input type="text" name="servingSize" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Cook Time: </label></td>
+			<td><input type="text" name="cookTime" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Prep Time: </label></td>
+			<td><input type="text" name="prepTime" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Add a link to an image: </label></td>
+			<td><input type="text" name="image" form="addrecipe" /> </td>    
+    	</tr>
+    	 <tr>
+    		<td style="text-align:right"><label>Description </label></td>
+			<td><input type="text" name="description" form="addrecipe" /> </td>    
+    	</tr>
+	</table>
+	
 			 <br> 
 			<input type="submit"
-			value="Add Recipe" />
+			value="Add Recipe" form="addrecipe"/>
+
 	</form>
-	
-	
 	
 	<!-- create go home button here -->
 	<a href="home.do"> <input type="submit" value="Return Home" />

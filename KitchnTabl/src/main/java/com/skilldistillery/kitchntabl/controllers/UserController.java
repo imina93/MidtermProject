@@ -27,7 +27,17 @@ public class UserController {
 	
 	@RequestMapping(path = "getUserPage.do")
 	public String showLoggedInUser(HttpSession session) {
-		return "user/userPage";
+		
+		User user = (User) session.getAttribute("loggedInUser");
+		user = dao.logUserIn(user);
+		if (user != null) {
+			session.setAttribute("loggedInUser", user);
+			System.out.println(user);
+			user.getRecipe().size();
+			return "user/userPage";
+		} else {
+		return "login";
+		}
 	}
 	
 	@RequestMapping(path = "createUserSlot.do", method = RequestMethod.POST)

@@ -4,7 +4,7 @@
 
 <table class="center">
 <tr>
-<div class="container-fluid">
+
 <div class="center">
 <div class="col-md-12">
 <div class="row">
@@ -33,6 +33,6 @@
   </div>
   </div>
   </div>
-</div>
+
 </tr>
 </table>

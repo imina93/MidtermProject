@@ -17,9 +17,9 @@
       <img src="${recipe.image}" alt="Avatar" style="width:250px;height:250px;">
     </div>
     <div class="flip-card-back">
-      <h1>${recipe.name}</h1>
+      <h2>${recipe.name}</h2>
     <a href="showRecipe.do?rid=${recipe.id}">
-    	See Details
+    	     See Details
   	</a>
     </div>
   </div>

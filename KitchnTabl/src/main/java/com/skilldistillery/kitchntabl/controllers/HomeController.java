@@ -18,7 +18,7 @@ public class HomeController {
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String home(Model model) {
-		model.addAttribute("randomRecipes", recipeDao.randomRecipeList(3));
+		model.addAttribute("randomRecipes", recipeDao.randomRecipeList(6));
 		return "home"; 
 	}
 }

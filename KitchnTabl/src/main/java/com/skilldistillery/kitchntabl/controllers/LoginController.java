@@ -32,6 +32,8 @@ public class LoginController {
 			model.addAttribute("loginError", "Invalid Login Information, Try Again.");
 			return "login/login";
 		}
+		
+		
 	}
 //						This might work for the 405 error when logging in from header.. not sure
 	@RequestMapping(path = "loginHead.do", method=RequestMethod.GET)

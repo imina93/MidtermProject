@@ -22,7 +22,7 @@
     <div class="flip-card-back">
       <h2>${recipe.name}</h2>
     <a href="showRecipe.do?rid=${recipe.id}">
-    	See Details
+    	     See Details
   	</a>
     </div>
   </div>

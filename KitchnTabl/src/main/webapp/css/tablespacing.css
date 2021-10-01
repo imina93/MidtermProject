@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+table {
+                border-collapse: collapse;
+            }
+th {
+                background-color:#94aaaa;
+                Color:white;
+            }
+th, td {
+                background-color:#a6c5c3;
+                width:150px;
+                text-align:center;
+                border:1px solid black;
+                padding:5px;
+              
+            }
+.spacing {
+                border-right:hidden;
+            }
+.tableclass {
+                border-collapse:separate;
+                border-spacing:0 15px;
+            }
+/* h1 {
+                color:green;
+            } */

@@ -11,18 +11,20 @@
 </head>
 <body>
 <jsp:include page="../navbar.jsp"></jsp:include>
-<h2>${recipe.name}</h2>
-<div>
+  <h2>${recipe.name}</h2>
+  <br>
+  <br>
   <h5>Recipe Name: ${recipe.name} </h5>
-  <h5>Description:${recipe.description}  Prep Time: ${recipe.prepTime} </h5>
-  <h5>Cook Time: ${recipe.cookTime}  Serving Size:${recipe.servingSize}  Chef Rating: ${recipe.chefRating} </h5>
+  <h5>Description:${recipe.description}</h5>
+  <h5>Prep Time: ${recipe.prepTime}</h5>
+  <h5>Cook Time: ${recipe.cookTime}</h5>
+  <h5>Serving Size:${recipe.servingSize}</h5>
+  <h5>Chef Rating: ${recipe.chefRating}</h5>
   <h5>Category: ${recipe.category}</h5>
-  <p>Instructions:
   <br> 
-  ${recipe.instructions}
-  </p>
-</div>
-
+  <br> 
+  <h6>Instructions:</h6>
+  <h6>${recipe.instructions}</h6>
 <div>
 <form action="editRecipe.do" method="POST">
 	<h5>Edit Recipe</h5>	

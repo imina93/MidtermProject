@@ -26,18 +26,65 @@
 <form action="editRecipe.do" method="POST">
 	<h5>Edit Recipe</h5>	
 	<br>
-		Recipe ID: <input type="text" name="rid" value="${recipe.id}" /> <br>
-		Recipe Name: <input type="text" name="name" value="${recipe.name}" /> <br>
-		Recipe Instructions: <input type="text" name="instructions" value="${recipe.instructions}"/> <br>
-		Calories: <input type="text" name="calories" value="${recipe.calories}"/> <br>
-		Chef Rating: <input type="text" name="chefRating" value="${recipe.chefRating}" /> <br>
-		Category: <input type="text" name="category" value="${recipe.category}"/> <br>
-		Serving Size: <input type="text" name="servingSize" value="${recipe.servingSize}" /> <br>
-		Cook Time: <input type="text" name="cookTime" value="${recipe.cookTime}"/> <br>
-		Prep Time: <input type="text" name="prepTime" value="${recipe.prepTime}"/><br>
-		Add An Image: <input type="text" name="image" /> <br>
-		Description: <input type="text" name="description" value="${recipe.description}"/>  <br>
+	
+	<table>
+	
+	<tr>
+	<td>Recipe ID: 	</td>
+	<td><input type="text" name="rid" value="${recipe.id}" />	</td>
+	</tr>
+	
+	<tr>
+	<td>Recipe Name:</td>
+	<td><input type="text" name="name" value="${recipe.name}" /> </td>
+	</tr>
+	
+	<tr>
+	<td>Recipe Instructions:</td>
+	<td><input type="text" name="instructions" value="${recipe.instructions}"/> </td>
+	</tr>
+	
+	<tr>
+	<td>Calories:</td>
+	<td> <input type="text" name="calories" value="${recipe.calories}"/></td>
+	</tr>
+	
+	<tr>
+	<td>Chef Rating:</td>
+	<td><input type="text" name="chefRating" value="${recipe.chefRating}" /> </td>
+	</tr>
+	
+	<tr>
+	<td>Category:</td>
+	<td><input type="text" name="category" value="${recipe.category}"/> </td>
+	</tr>
+	
+	<tr>
+	<td>Serving Size:</td>
+	<td><input type="text" name="servingSize" value="${recipe.servingSize}" /> </td>
+	</tr>
+	
+	<tr>
+	<td>Cook Time:</td>
+	<td><input type="text" name="cookTime" value="${recipe.cookTime}"/></td>
+	</tr>
+	
+	<tr>
+	<td>Prep Time:</td>
+	<td><input type="text" name="prepTime" value="${recipe.prepTime}"/></td>
+	</tr>
 		
+	<tr>
+	<td>Add An Image:</td>
+	<td> <input type="text" name="image" /> </td>
+	</tr>
+	
+	<tr>
+	<td>Description:</td>
+	<td><input type="text" name="description" value="${recipe.description}"/>	</td>
+	</tr>
+	
+	</table>	
 			 <br> 
 			<input type="submit"
 			value="Update Now"/>

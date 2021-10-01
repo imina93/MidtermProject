@@ -13,6 +13,7 @@ import com.skilldistillery.kitchntabl.entities.RecipeComment;
 import com.skilldistillery.kitchntabl.entities.RecipeImage;
 import com.skilldistillery.kitchntabl.entities.RecipeIngredient;
 import com.skilldistillery.kitchntabl.entities.RecipeRating;
+import com.skilldistillery.kitchntabl.entities.User;
 
 @Service
 @Transactional
@@ -22,7 +23,7 @@ public class RecipeDaoImpl implements RecipeDAO {
 	private EntityManager em;;
 	
 	@Override
-	public Recipe findRecipe(int recipeId) {
+	public Recipe findById(int recipeId) {
 				return em.find(Recipe.class, recipeId);
 	}
 	
@@ -98,6 +99,13 @@ public class RecipeDaoImpl implements RecipeDAO {
 		}
 	
 		return !em.contains(deleteRecipe);
+	}
+
+	@Override
+	public List<Recipe> findAll() {
+		String jpql = "SELECT r FROM Recipe r";
+		List<Recipe> recipe = em.createQuery(jpql, Recipe.class).getResultList();
+		return recipe;
 	}
 
 }

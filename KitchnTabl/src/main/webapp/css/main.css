@@ -20,8 +20,7 @@ h1 {
 	border-radius: 200%;
 	border: 3px solid #FEDE00;
 	background-color: white;
-	position: relative;
-	left: 5px;
+	position: static;
 	float: center;
 }
 

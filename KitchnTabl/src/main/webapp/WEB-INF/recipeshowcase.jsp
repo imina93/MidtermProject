@@ -2,10 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
+<table class="center">
+<tr>
 <div class="container-fluid">
 <div class="center">
-<div class="col-md-4">
+<div class="col-md-12">
 <div class="row">
 <c:forEach var= "recipe" items="${randomRecipes}">
 
@@ -33,4 +34,5 @@
   </div>
   </div>
 </div>
-  </div>
+</tr>
+</table>
